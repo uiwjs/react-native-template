@@ -14,12 +14,18 @@
     "url": "git+https://github.com/uiwjs/react-native-template.git"
   },
   "keywords": [
+    "react-native-template",
     "react-native",
     "jest",
     "template",
-    "boilerplate"
+    "uiw",
+    "redux",
+    "react",
+    "react-navigation",
+    "navigation",
+    "rematch"
   ],
-  "author": "Kenny <wowohoo@qq.com>",
+  "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/uiwjs/react-native-template/issues"
