@@ -1,0 +1,28 @@
+{
+  "name": "@uiw/react-native-template",
+  "version": "0.0.1",
+  "description": "React Native template for react-native-uiw.",
+  "scripts": {
+    "prepublishOnly": "npm --no-git-tag-version version $TRAVIS_TAG"
+  },
+  "files": [
+    "template",
+    "template.config.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uiwjs/react-native-template.git"
+  },
+  "keywords": [
+    "react-native",
+    "jest",
+    "template",
+    "boilerplate"
+  ],
+  "author": "Kenny <wowohoo@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uiwjs/react-native-template/issues"
+  },
+  "homepage": "https://github.com/uiwjs/react-native-template#readme"
+}
