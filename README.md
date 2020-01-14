@@ -8,9 +8,9 @@ React Native template for [@uiw/react-native](https://github.com/uiwjs/react-nat
 - Consistent with the default React Native template
 - Minimal additional dependencies
 
-## Usage
+## Installation and Usage
 
-⚠️ This template only works with the new CLI. 
+⚠️ This template only works with the new CLI. This template is intended for React Native versions `>= 0.61`. It has not been tested with previous versions. 
 
 ### Note on the legacy CLI
 
@@ -41,6 +41,17 @@ npx react-native init ProjectName --template ${TEMPLATE_NAME}
 # This will initialize new project using init command from react-native@VERSION but will use TEMPLATE_NAME custom template
 npx react-native@${VERSION} init ProjectName --template ${TEMPLATE_NAME}
 ```
+
+## Features
+
+This template includes the following:
+
+- React Native 0.60 support (now with Hooks! 🙌).
+- Easy to use and understand folder structure to get you up and running as fast as possible.
+- [UIW](https://github.com/uiwjs/react-native-uiw) component framework and themes.
+- [React Navigation](https://reactnavigation.org/)
+- Redux support (with [@rematch](https://github.com/rematch/rematch) example)
+- ESLint, and Prettier configured out-of-the-box
 
 ## Contributing
 
