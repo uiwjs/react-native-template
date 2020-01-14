@@ -1,5 +1,11 @@
 # React Native UIW Template
 
+[![](https://img.shields.io/github/issues/uiwjs/react-native-template.svg?style=flat-square)](https://github.com/uiwjs/react-native-template/issues)
+[![](https://img.shields.io/github/forks/uiwjs/react-native-template.svg?style=flat-square)](https://github.com/uiwjs/react-native-template/network)
+[![](https://img.shields.io/github/stars/uiwjs/react-native-template.svg?style=flat-square)](https://github.com/uiwjs/react-native-template/stargazers)
+[![](https://img.shields.io/github/release/uiwjs/react-native-template?style=flat-square)](https://github.com/uiwjs/react-baidu-map/releases)
+[![](https://img.shields.io/npm/v/@uiw/react-native-template.svg?color=success&style=flat-square)](https://www.npmjs.com/package/@uiw/react-native-template)
+
 React Native template for [@uiw/react-native](https://github.com/uiwjs/react-native-uiw). 
 
 ## Features
