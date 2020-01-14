@@ -1,4 +1,4 @@
-# React Native Template UIW
+# React Native UIW Template
 
 > React Native template for [@uiw/react-native](https://github.com/uiwjs/react-native-uiw).
 
@@ -19,7 +19,7 @@ Further information can be found here: https://github.com/react-native-community
 **`react-native@0.61.0` or higher**
 
 ```sh
-npx react-native init MyApp --template react-native-template
+npx react-native init MyApp --template @uiw/react-native-template
 ```
 
 ## Contributing
