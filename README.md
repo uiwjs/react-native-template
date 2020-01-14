@@ -12,9 +12,9 @@ React Native template for [@uiw/react-native](https://github.com/uiwjs/react-nat
 
 ⚠️ This template only works with the new CLI. This template is intended for React Native versions `>= 0.61`. It has not been tested with previous versions. 
 
-### Note on the legacy CLI
+**Note on the legacy CLI**
 
-⚠️ There seems to be quite some confusion about the legacy CLI [@react-native-community/react-native-template-typescript/#80](https://github.com/react-native-community/react-native-template-typescript/issues/80). This template only works with the new CLI. Make sure you have uninstalled the legacy `react-native-cli` first (`npm uninstall -g react-native-cli`), for the below command to work. 
+⚠️ There seems to be quite some confusion about the legacy CLI. This template only works with the new CLI. Make sure you have uninstalled the legacy `react-native-cli` first (`npm uninstall -g react-native-cli`), for the below command to work. 
 
 ```bash
 npm uninstall -g react-native-cli
@@ -25,13 +25,16 @@ Further information can be found here: https://github.com/react-native-community
 **`react-native@0.61.0` or higher**
 
 ```sh
-npx react-native init MyApp --template react-native-template-uiw
+npx react-native init MyApp --template @uiw/react-native-template
+# npx react-native init MyApp --template @uiw/react-native-template@v1.0.0
 ```
 
-If you wish to not use `npx`, you can also install the new CLI globally (`npm i -g @react-native-community/cli` or `yarn global add @react-native-community/cli`).
+**If you wish to not use `npx`**
+
+you can also install the new CLI globally (`npm i -g @react-native-community/cli` or `yarn global add @react-native-community/cli`).
 
 ```bash
-react-native init MyApp --template react-native-template-uiw
+react-native init MyApp --template @uiw/react-native-template
 ```
 
 ```bash
@@ -48,7 +51,7 @@ This template includes the following:
 
 - React Native 0.60 support (now with Hooks! 🙌).
 - Easy to use and understand folder structure to get you up and running as fast as possible.
-- [UIW](https://github.com/uiwjs/react-native-uiw) component framework and themes.
+- [@uiw/react-native](https://github.com/uiwjs/react-native-uiw) component framework and themes.
 - [React Navigation](https://reactnavigation.org/)
 - Redux support (with [@rematch](https://github.com/rematch/rematch) example)
 - ESLint, and Prettier configured out-of-the-box
