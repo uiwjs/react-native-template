@@ -6,7 +6,7 @@
 [![](https://img.shields.io/github/stars/uiwjs/react-native-template.svg?style=flat-square)](https://github.com/uiwjs/react-native-template/stargazers)
 [![](https://img.shields.io/github/release/uiwjs/react-native-template?style=flat-square)](https://github.com/uiwjs/react-baidu-map/releases)
 
-React Native template for [@uiw/react-native](https://github.com/uiwjs/react-native-uiw). 
+React Native Template for [@uiw/react-native](https://github.com/uiwjs/react-native-uiw). 
 
 ## Features
 
@@ -53,7 +53,8 @@ react-native init MyApp --template @uiw/react-native-template
 # This will initialize new project using template from TEMPLATE_NAME package
 npx react-native init ProjectName --template ${TEMPLATE_NAME}
 
-# This will initialize new project using init command from react-native@VERSION but will use TEMPLATE_NAME custom template
+# This will initialize new project using init command from react-native@VERSION
+# but will use TEMPLATE_NAME custom template
 npx react-native@${VERSION} init ProjectName --template ${TEMPLATE_NAME}
 ```
 

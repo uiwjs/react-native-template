@@ -44,12 +44,6 @@
     "react-test-renderer": "16.9.0"
   },
   "jest": {
-    "preset": "react-native",
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
+    "preset": "react-native"
   }
 }

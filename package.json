@@ -23,6 +23,7 @@
     "react",
     "react-navigation",
     "navigation",
+    "boilerplate",
     "rematch"
   ],
   "author": "Kenny Wong <wowohoo@qq.com>",
