@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { TextInput, SafeAreaView, StyleSheet, StatusBar } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
+import { TextInput, SafeAreaView, StyleSheet, StatusBar, Text } from 'react-native';
 import { Button, H4, Flex, Spacing, P, Icon, CheckBox, Badge } from '@uiw/react-native';
 
 import Global from '../../global';
 import Footer from '../../components/Footer';
 import { logoLight } from '../../components/icons/signin';
+import conf from '../../config'
 
 class SigninScreen extends Component {
+  state = {
+    hostType: ''
+  }
+
   async componentDidMount() {
     const { navigation } = this.props;
     if (navigation && Global) {
       Global.navigation = navigation;
     }
+    this._getHostType()
   }
   goToOptions = () => {
     this.props.navigation.navigate('DevOptions');
@@ -20,20 +27,41 @@ class SigninScreen extends Component {
   onChangeUserName = text => this.props.updateForm({ username: text });
   onChangePassWord = text => this.props.updateForm({ password: text });
   onSubmit = () => this.props.login();
+
+
+  _getHostType = async () => {
+    if (conf.production) {
+      const productionOptions = conf.hosts.find(itm => itm.type === 'production')
+      await AsyncStorage.setItem('apihost', JSON.stringify(productionOptions));
+    } else {
+      const host = await AsyncStorage.getItem('apihost');
+      this.setState({
+        hostType: JSON.parse(host).type
+      })
+    }
+  }
+
   render() {
     const { formData, loading } = this.props;
+    const { hostType } = this.state;
     return (
       <SafeAreaView style={styles.block}>
         <StatusBar barStyle="light-content" />
-        <Flex justify="end">
-          <Button bordered={false} style={styles.setting} onPress={this.goToOptions}>
-            <Icon bordered={false} name="setting" fill="#FFCB00" />
-          </Button>
-        </Flex>
-        <Flex align="center" direction="column" style={{ flex: 1}}>
+        {
+          !conf.production && <Flex justify="end">
+            <Button bordered={false} style={styles.setting} onPress={this.goToOptions}>
+              <Icon bordered={false} name="setting" fill="#FFCB00" />
+            </Button>
+          </Flex>
+        }
+
+        <Flex align="center" direction="column" style={{ flex: 1 }}>
           <Flex justify="center" align="center" direction="column" style={styles.header}>
             <Icon xml={logoLight} size={75} />
             <H4 style={styles.titie}>Sign In</H4>
+            {
+              !conf.production && <Text style={styles.hostNotice}>{hostType}</Text>
+            }
             <P style={styles.description}>Enter username and password.</P>
           </Flex>
           <Flex align="center" direction="column" style={{ flex: 1 }}>
@@ -128,4 +156,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 35,
     paddingVertical: 4,
   },
+  hostNotice: {
+    right: -60,
+    top: -30,
+    width: 40,
+    height: 20,
+    borderRadius: 3,
+    overflow: 'hidden',
+    color: '#fff',
+    fontSize: 14,
+    textAlign: 'center',
+    backgroundColor: '#FFCB00',
+  }
 });
