@@ -42,7 +42,7 @@
     "eslint": "5.0.0",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.0",
-    "mocker-api": "^1.11.2",
+    "mocker-api": "^1.12.2",
     "react-test-renderer": "16.9.0",
     "typescript": "^3.7.4"
   },
