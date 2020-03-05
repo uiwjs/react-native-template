@@ -48,6 +48,10 @@ export default async function request(url, options) {
       if (/(200|201)/.test(response.status)) {
         return data;
       }
+      if (/(401)/.test(response.status)) {
+        Global.navigation.navigate('SignIn')
+        return ;
+      }
       Alert.alert(`Request Error ${response.status}`, `E2111: ${data.message} - ${fetchURL} - ${JSON.stringify(data)}`);
     })
     .catch(error => {
