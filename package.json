@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-native-template",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "React Native template for react-native-uiw.",
   "scripts": {
     "prepublishOnly": "npm --no-git-tag-version version $TRAVIS_TAG"
