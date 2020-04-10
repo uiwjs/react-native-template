@@ -57,6 +57,9 @@ npx react-native init ProjectName --template ${TEMPLATE_NAME}
 # but will use TEMPLATE_NAME custom template
 npx react-native@${VERSION} init ProjectName --template ${TEMPLATE_NAME}
 ```
+## Links
+
+- [React Native upgrade helper](https://react-native-community.github.io/upgrade-helper/)
 
 ## Contributing
 
