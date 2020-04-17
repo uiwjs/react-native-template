@@ -29,7 +29,7 @@
     "react-native-tab-view": "2.14.0",
     "react-navigation": "4.3.7",
     "react-navigation-drawer": "2.4.11",
-    "react-navigation-stack": "2.3.11",
+    "react-navigation-stack": "2.3.12",
     "react-navigation-tabs": "2.8.11",
     "react-redux": "7.2.0",
     "redux": "4.0.5"
