@@ -15,7 +15,7 @@ export default {
   /**
    * The production value is `true` and there is no host option interface.
    */
-  production: true,
+  production: false,
   /**
    * Default first.
    */
