@@ -17,8 +17,9 @@ This template includes the following:
 - Easy to use and understand folder structure to get you up and running as fast as possible.
 - [@uiw/react-native](https://github.com/uiwjs/react-native-uiw) component framework and themes.
 - [React Navigation](https://github.com/react-navigation/react-navigation)
-- Redux support (with [@rematch](https://github.com/rematch/rematch) example)
-- ESLint, and Prettier configured out-of-the-box
+- [Redux](https://github.com/reduxjs/redux) support (with [@rematch](https://github.com/rematch/rematch) example)
+- [ESLint](https://github.com/eslint/eslint), and [Prettier](https://github.com/prettier/prettier) configured out-of-the-box
+- Using [mocker-api](https://github.com/jaywcjlove/mocker-api) that creates mocks for REST APIs.
 
 ## Installation and Usage
 
