@@ -8,16 +8,8 @@ export const stackPageData = [
     name: "Home",
     component: Home,
     options: {
-      headerShown: false,
-      header: () => null
-    }
-  },
-  {
-    name: "MyHomeSetting",
-    component: MyHomeSetting,
-    options: {
-      headerShown: false,
-      header: () => null
+      // headerShown: false,
+      // header: () => null
     }
   },
   {
@@ -34,6 +26,13 @@ export const stackPageData = [
     options: {
       headerShown: false,
       header: () => null
+    }
+  },
+  {
+    name: "MyHomeSetting",
+    component: MyHomeSetting,
+    options: {
+      title: '设置',
     }
   },
 ]
