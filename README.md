@@ -8,6 +8,9 @@
 
 React Native Template for [@uiw/react-native](https://github.com/uiwjs/react-native-uiw). 
 
+
+> Migrate from @uiw/react-native-template 0.1.2 to [v1.1.0](https://github.com/uiwjs/react-native-template/releases/tag/v1.1.0)
+
 ## Features
 
 This template includes the following:
