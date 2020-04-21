@@ -1,6 +1,16 @@
 import { fetch } from '../utils';
 
 /**
+ * Auth token
+ */
+export async function userAuth(params) {
+  return fetch('/api/auth', {
+    method: 'GET',
+    body: params,
+  });
+}
+
+/**
  * login
  */
 export async function userLogin(params) {

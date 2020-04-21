@@ -34,7 +34,8 @@ export default {
         await dispatch.global.update({ token: data.token });
         await this.update({ userData: data.data });
         if (Global.navigation) {
-          Global.navigation.navigate('App');
+          // Global.navigation.navigate('Home');
+          Global.navigation.replace('Home');
         }
       } else if (data && data.message) {
         Alert.alert(`Login failed - ${data.error}`, data.message);

@@ -1,28 +1,25 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { View, Text } from 'react-native';
-import { Button } from '@uiw/react-native';
+import { StatusBar } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import homeTabData from '../../routes/homeTab';
+
+const BottomTabs = createBottomTabNavigator();
 
 class DashboardScreen extends React.Component {
   render() {
-    const { loading } = this.props;
     return (
-      <View>
-        <Text>This Home Page.</Text>
-        <Button loading={loading.logout} disabled={loading.logout} type="danger" onPress={this.props.logout}>
-          Logout
-        </Button>
-      </View>
+      <React.Fragment>
+        <StatusBar barStyle="dark-content" />
+        <BottomTabs.Navigator>
+          {homeTabData.map((props, idx) => {
+            return (
+              <BottomTabs.Screen key={idx} {...props} />
+            )
+          })}
+        </BottomTabs.Navigator>
+      </React.Fragment>
     );
   }
 }
 
-export default connect(
-  ({ loading, users }) => ({
-    loading: loading.effects.users,
-  }),
-  ({ users }) => ({
-    update: users.update,
-    logout: users.logout,
-  }),
-)(DashboardScreen);
+export default DashboardScreen;

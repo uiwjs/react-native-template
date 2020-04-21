@@ -100,7 +100,10 @@ class DevOptions extends React.Component {
         <StatusBar barStyle="light-content" />
         <View style={{ flex: 1 }}>
           <Flex justify="start" align="start">
-            <Button bordered={false} style={{ marginLeft: 15, marginBottom: 20 }} onPress={() => navigation.navigate('SignIn')}>
+            <Button
+              bordered={false}
+              style={{ marginLeft: 15, marginBottom: 20 }}
+              onPress={() => navigation.goBack()}>
               <Icon fill="#fff" size={23} name="arrow-left" />
             </Button>
           </Flex>

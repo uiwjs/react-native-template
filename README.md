@@ -58,6 +58,18 @@ npx react-native init ProjectName --template ${TEMPLATE_NAME}
 # but will use TEMPLATE_NAME custom template
 npx react-native@${VERSION} init ProjectName --template ${TEMPLATE_NAME}
 ```
+
+## Dependencies
+
+```bash
+@react-navigation/native
+  ├──react-native-gesture-handler
+  ├──react-native-reanimated
+  ├──react-native-screens
+  ├──react-native-safe-area-context
+  └──@react-native-community/masked-view
+```
+
 ## Links
 
 - [React Native upgrade helper](https://react-native-community.github.io/upgrade-helper/)
