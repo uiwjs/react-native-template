@@ -5,10 +5,11 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start",
+    "start": "react-native start --reset-cache",
     "test": "jest",
     "api": "mocker ./mocker",
     "api2": "NO_PROXY=true mocker ./mocker",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
@@ -38,10 +39,23 @@
     "@react-native-community/eslint-config": "1.1.0",
     "babel-jest": "25.1.0",
     "eslint": "6.5.1",
+    "husky": "4.2.5",
     "jest": "25.1.0",
+    "lint-staged": "10.2.11",
     "metro-react-native-babel-preset": "0.59.0",
     "mocker-api": "2.1.0",
+    "prettier": "2.0.5",
     "react-test-renderer": "16.13.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ]
   },
   "jest": {
     "preset": "react-native"
