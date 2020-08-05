@@ -50,7 +50,7 @@ npx react-native init MyApp --template @uiw/react-native-template
 you can also install the new CLI globally (`npm i -g @react-native-community/cli` or `yarn global add @react-native-community/cli`).
 
 ```bash
-react-native init MyApp --template @uiw/react-native-template
+npx react-native init MyApp --template @uiw/react-native-template
 ```
 
 ```bash
