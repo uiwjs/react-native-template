@@ -6,7 +6,7 @@
 [![](https://img.shields.io/github/stars/uiwjs/react-native-template.svg?style=flat-square)](https://github.com/uiwjs/react-native-template/stargazers)
 [![](https://img.shields.io/github/release/uiwjs/react-native-template?style=flat-square)](https://github.com/uiwjs/react-baidu-map/releases)
 
-React Native Template for [@uiw/react-native](https://github.com/uiwjs/react-native-uiw). 
+[React Native](https://github.com/facebook/react-native) Template for [@uiw/react-native](https://github.com/uiwjs/react-native-uiw). 
 
 
 > Migrate from @uiw/react-native-template 0.1.2 to [v1.1.0](https://github.com/uiwjs/react-native-template/releases/tag/v1.1.0)
@@ -16,7 +16,7 @@ React Native Template for [@uiw/react-native](https://github.com/uiwjs/react-nat
 This template includes the following:
 
 - Elegant usage directly within the [React Native CLI](https://github.com/react-native-community/cli)
-- React Native 0.60 support (now with Hooks! 🙌).
+- [React Native](https://github.com/facebook/react-native) 0.60 support (now with Hooks! 🙌).
 - Easy to use and understand folder structure to get you up and running as fast as possible.
 - [@uiw/react-native](https://github.com/uiwjs/react-native-uiw) component framework and themes.
 - Using [react-navigation](https://github.com/react-navigation/react-navigation) to routing and navigate your React Native applications.
