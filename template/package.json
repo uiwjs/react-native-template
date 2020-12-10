@@ -22,8 +22,8 @@
     "@rematch/loading": "1.2.1",
     "@uiw/formatter": "1.2.4",
     "@uiw/react-native": "1.7.4",
-    "react": "16.13.1",
-    "react-native": "0.63.3",
+    "react": "16.14.0",
+    "react-native": "0.63.4",
     "react-native-device-info": "7.1.0",
     "react-native-gesture-handler": "1.9.0",
     "react-native-reanimated": "1.13.2",
@@ -45,7 +45,7 @@
     "metro-react-native-babel-preset": "0.64.0",
     "mocker-api": "2.7.4",
     "prettier": "2.2.0",
-    "react-test-renderer": "16.13.1"
+    "react-test-renderer": "16.14.0"
   },
   "husky": {
     "hooks": {
