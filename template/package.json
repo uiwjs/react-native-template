@@ -15,9 +15,9 @@
   "dependencies": {
     "@react-native-community/async-storage": "1.12.1",
     "@react-native-community/masked-view": "0.1.10",
-    "@react-navigation/bottom-tabs": "5.11.2",
-    "@react-navigation/native": "5.8.10",
-    "@react-navigation/stack": "5.12.8",
+    "@react-navigation/bottom-tabs": "5.11.8",
+    "@react-navigation/native": "5.9.3",
+    "@react-navigation/stack": "5.14.3",
     "@rematch/core": "1.4.0",
     "@rematch/loading": "1.2.1",
     "@uiw/formatter": "1.2.4",
