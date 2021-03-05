@@ -44,7 +44,7 @@
     "lint-staged": "10.5.1",
     "metro-react-native-babel-preset": "0.64.0",
     "mocker-api": "2.8.2",
-    "prettier": "2.2.0",
+    "prettier": "2.2.1",
     "react-test-renderer": "16.13.1"
   },
   "husky": {
