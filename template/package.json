@@ -30,7 +30,7 @@
     "react-native-safe-area-context": "3.1.9",
     "react-native-screens": "2.15.0",
     "react-native-svg": "12.1.0",
-    "react-redux": "7.2.1",
+    "react-redux": "7.2.3",
     "redux": "4.0.5"
   },
   "devDependencies": {
