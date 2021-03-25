@@ -43,7 +43,10 @@ Further information can be found here: https://github.com/react-native-community
 ⚠️ 
 
 ```bash
+# Install ffi
 sudo arch -x86_64 gem install ffi
+
+# Re-install dependency
 arch -x86_64 pod install
 ```
 
