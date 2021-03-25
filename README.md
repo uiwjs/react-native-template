@@ -38,6 +38,16 @@ npm uninstall -g react-native-cli
 
 Further information can be found here: https://github.com/react-native-community/cli#about
 
+**MacBook Pro with a M1**
+
+⚠️ 
+
+```bash
+sudo arch -x86_64 gem install ffi
+arch -x86_64 pod install
+```
+
+
 **`react-native@0.61.0` or higher**
 
 ```sh
