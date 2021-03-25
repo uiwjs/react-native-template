@@ -38,9 +38,7 @@ npm uninstall -g react-native-cli
 
 Further information can be found here: https://github.com/react-native-community/cli#about
 
-**MacBook Pro with a M1**
-
-⚠️ 
+**⚠️ MacBook Pro with a M1**
 
 ```bash
 # Install ffi
