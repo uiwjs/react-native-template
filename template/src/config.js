@@ -1,4 +1,4 @@
-import { getUniqueId, getVersion } from 'react-native-device-info';
+import {getUniqueId, getVersion} from 'react-native-device-info';
 
 export default {
   /**
@@ -31,4 +31,4 @@ export default {
       url: 'http://103.20.249.82:18901',
     },
   ],
-}
+};

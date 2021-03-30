@@ -1,4 +1,4 @@
-import { init } from '@rematch/core';
+import {init} from '@rematch/core';
 import createLoadingPlugin from '@rematch/loading';
 import * as global from './global';
 import * as users from './users';

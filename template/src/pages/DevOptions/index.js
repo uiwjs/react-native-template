@@ -1,8 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import AsyncStorage from '@react-native-community/async-storage';
-import { TextInput, SafeAreaView, View, Text, StatusBar, StyleSheet, ScrollView, Platform, KeyboardAvoidingView } from 'react-native';
-import { Button, WingBlank, Icon, Flex, Spacing, H4, List } from '@uiw/react-native';
+import {TextInput, SafeAreaView, View, Text, StatusBar, StyleSheet, ScrollView, Platform, KeyboardAvoidingView} from 'react-native';
+import {Button, WingBlank, Icon, Flex, Spacing, H4, List} from '@uiw/react-native';
 import conf from '../../config';
 
 class DevOptions extends React.Component {
@@ -30,42 +30,42 @@ class DevOptions extends React.Component {
       state.selectUrl = selectUrl || {};
     }
     // eslint-disable-next-line react/no-did-mount-set-state
-    this.setState({ ...state });
+    this.setState({...state});
   }
   async handleSelect(data) {
-    await this.setState({ selectUrl: data });
+    await this.setState({selectUrl: data});
     await AsyncStorage.setItem('apihost', JSON.stringify(data));
-    this.props.update({ apihost: data });
+    this.props.update({apihost: data});
   }
   async handleEndEditing(e) {
-    const { dataList } = this.state;
+    const {dataList} = this.state;
     const text = e.nativeEvent.text;
     const isInclude = dataList.find(item => item.url === text);
     if (!isInclude && text) {
-      const customUrl = { url: text, label: 'Custom URL', type: 'custom' };
+      const customUrl = {url: text, label: 'Custom URL', type: 'custom'};
       dataList.unshift(customUrl);
       await AsyncStorage.setItem('cacheURLData', JSON.stringify(dataList));
-      this.setState({ dataList, selectUrl: customUrl, customUrl: '' });
+      this.setState({dataList, selectUrl: customUrl, customUrl: ''});
     }
   }
   deleteCustomUrl = async () => {
-    const { dataList, selectUrl } = this.state;
+    const {dataList, selectUrl} = this.state;
     const data = dataList.filter(item => item.url !== selectUrl.url);
-    this.setState({ dataList: data, selectUrl: {} });
+    this.setState({dataList: data, selectUrl: {}});
     await AsyncStorage.setItem('cacheURLData', JSON.stringify(data));
   };
   handleCustomUrl = async customUrl => {
-    await this.setState({ customUrl });
+    await this.setState({customUrl});
   };
   measureContainer = event => {
-    const { height } = event.nativeEvent.layout;
-    this.setState({ height });
+    const {height} = event.nativeEvent.layout;
+    this.setState({height});
   };
   render() {
-    const { navigation } = this.props;
+    const {navigation} = this.props;
     const DataSourceView = (
-      <ScrollView style={{ flex: 1, backgroundColor: '#fff' }}>
-        <View style={{ margin: 10 }}>
+      <ScrollView style={{flex: 1, backgroundColor: '#fff'}}>
+        <View style={{margin: 10}}>
           <TextInput
             autoCapitalize="none"
             style={styles.input}
@@ -84,10 +84,9 @@ class DevOptions extends React.Component {
             <List.Item
               key={idx}
               extra={item.url || ' '}
-              touchableStyle={{ backgroundColor: '#fff' }}
-              style={{ backgroundColor: 'transparent' }}
-              onPress={this.handleSelect.bind(this, item)}
-            >
+              touchableStyle={{backgroundColor: '#fff'}}
+              style={{backgroundColor: 'transparent'}}
+              onPress={this.handleSelect.bind(this, item)}>
               {item.url === this.state.selectUrl.url && <Icon size={14} name="check" fill="#008EF0" style={styles.urlListIcon} />}
               <Text>{item.label}</Text>
             </List.Item>
@@ -98,12 +97,9 @@ class DevOptions extends React.Component {
     return (
       <SafeAreaView style={styles.block}>
         <StatusBar barStyle="light-content" />
-        <View style={{ flex: 1 }}>
+        <View style={{flex: 1}}>
           <Flex justify="start" align="start">
-            <Button
-              bordered={false}
-              style={{ marginLeft: 15, marginBottom: 20 }}
-              onPress={() => navigation.goBack()}>
+            <Button bordered={false} style={{marginLeft: 15, marginBottom: 20}} onPress={() => navigation.goBack()}>
               <Icon fill="#fff" size={23} name="arrow-left" />
             </Button>
           </Flex>
@@ -113,7 +109,7 @@ class DevOptions extends React.Component {
             </Flex>
             <Spacing />
             {Platform.OS === 'ios' ? (
-              <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }} keyboardVerticalOffset={120}>
+              <KeyboardAvoidingView behavior="padding" style={{flex: 1}} keyboardVerticalOffset={120}>
                 {DataSourceView}
               </KeyboardAvoidingView>
             ) : (
@@ -121,7 +117,7 @@ class DevOptions extends React.Component {
             )}
             {this.state.selectUrl.type === 'custom' && (
               <View>
-                <Button style={{ marginVertical: 10 }} bordered={false} type="danger" onPress={this.deleteCustomUrl}>
+                <Button style={{marginVertical: 10}} bordered={false} type="danger" onPress={this.deleteCustomUrl}>
                   Delete Custom Host
                 </Button>
               </View>
@@ -134,10 +130,10 @@ class DevOptions extends React.Component {
 }
 
 export default connect(
-  ({ loading }) => ({
+  ({loading}) => ({
     loading: loading.effects.users,
   }),
-  ({ global }) => ({
+  ({global}) => ({
     update: global.update,
   }),
 )(DevOptions);

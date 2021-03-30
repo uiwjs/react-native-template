@@ -5,34 +5,34 @@ import MyHomeSetting from '../pages/MyHome/Setting';
 
 export const stackPageData = [
   {
-    name: "Home",
+    name: 'Home',
     component: Home,
     options: {
       // headerShown: false,
       // header: () => null
-    }
+    },
   },
   {
-    name: "SignIn",
+    name: 'SignIn',
     component: SignIn,
     options: {
       headerShown: false,
-      header: () => null
-    }
+      header: () => null,
+    },
   },
   {
-    name: "DevOptions",
+    name: 'DevOptions',
     component: DevOptions,
     options: {
       headerShown: false,
-      header: () => null
-    }
+      header: () => null,
+    },
   },
   {
-    name: "MyHomeSetting",
+    name: 'MyHomeSetting',
     component: MyHomeSetting,
     options: {
       title: '设置',
-    }
+    },
   },
-]
+];

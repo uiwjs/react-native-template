@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { Text, StyleSheet } from 'react-native';
-import { Flex, Icon } from '@uiw/react-native';
+import React, {Component} from 'react';
+import {Text, StyleSheet} from 'react-native';
+import {Flex, Icon} from '@uiw/react-native';
 
 export default class Footer extends Component {
   render() {
-    const { style } = this.props;
+    const {style} = this.props;
     return (
       <Flex direction="column" align="center" style={[styles.footer, style]}>
         <Text style={styles.company}>Shanghai xxx xxx xxx Co., Ltd.</Text>

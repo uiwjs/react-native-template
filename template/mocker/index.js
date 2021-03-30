@@ -8,5 +8,5 @@ const proxy = {
   ...user,
 };
 
-module.exports = noProxy ? { ...proxy } : delay(proxy, 1000);
+module.exports = noProxy ? {...proxy} : delay(proxy, 1000);
 // module.exports = proxy;

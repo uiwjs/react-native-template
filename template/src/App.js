@@ -1,12 +1,12 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { StatusBar } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { Provider } from 'react-redux';
-import { store } from './models';
+import {StatusBar} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {Provider} from 'react-redux';
+import {store} from './models';
 import AuthLoadingScreen from './pages/AuthLoading';
-import { stackPageData } from './routes'
+import {stackPageData} from './routes';
 
 const Stack = createStackNavigator();
 
@@ -15,9 +15,9 @@ export default () => {
     <Provider store={store}>
       <StatusBar barStyle="light-content" />
       <AuthLoadingScreen>
-        {(token) => (
+        {token => (
           <NavigationContainer>
-            <Stack.Navigator initialRouteName={!!token ? 'Home': 'SignIn'}>
+            <Stack.Navigator initialRouteName={token ? 'Home' : 'SignIn'}>
               {stackPageData.map((props, index) => {
                 return (
                   <Stack.Screen
@@ -29,7 +29,7 @@ export default () => {
                     // }}
                     // component={Home}
                   />
-                )
+                );
               })}
             </Stack.Navigator>
           </NavigationContainer>

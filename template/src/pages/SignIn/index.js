@@ -1,70 +1,67 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import AsyncStorage from '@react-native-community/async-storage';
-import { TextInput, SafeAreaView, StyleSheet, StatusBar, Text } from 'react-native';
-import { Button, H4, Flex, Spacing, P, Icon, CheckBox, Badge } from '@uiw/react-native';
+import {TextInput, SafeAreaView, StyleSheet, StatusBar, Text} from 'react-native';
+import {Button, H4, Flex, Spacing, P, Icon, CheckBox, Badge} from '@uiw/react-native';
 
 import Global from '../../global';
 import Footer from '../../components/Footer';
-import { logoLight } from '../../components/icons/signin';
-import conf from '../../config'
+import {logoLight} from '../../components/icons/signin';
+import conf from '../../config';
 
 class SigninScreen extends Component {
   state = {
-    hostType: ''
-  }
+    hostType: '',
+  };
 
   async componentDidMount() {
-    const { navigation } = this.props;
+    const {navigation} = this.props;
     if (navigation && Global) {
       Global.navigation = navigation;
     }
-    this._getHostType()
+    this._getHostType();
   }
   goToOptions = () => {
     this.props.navigation.navigate('DevOptions');
   };
-  onChangeUserName = text => this.props.updateForm({ username: text });
-  onChangePassWord = text => this.props.updateForm({ password: text });
+  onChangeUserName = text => this.props.updateForm({username: text});
+  onChangePassWord = text => this.props.updateForm({password: text});
   onSubmit = () => this.props.login();
-
 
   _getHostType = async () => {
     if (conf.production) {
-      const productionOptions = conf.hosts.find(itm => itm.type === 'production')
+      const productionOptions = conf.hosts.find(itm => itm.type === 'production');
       await AsyncStorage.setItem('apihost', JSON.stringify(productionOptions));
     } else {
       const host = await AsyncStorage.getItem('apihost');
       this.setState({
-        hostType: JSON.parse(host).type
-      })
+        hostType: JSON.parse(host).type,
+      });
     }
-  }
+  };
 
   render() {
-    const { formData, loading } = this.props;
-    const { hostType } = this.state;
+    const {formData, loading} = this.props;
+    const {hostType} = this.state;
     return (
       <SafeAreaView style={styles.block}>
         <StatusBar barStyle="light-content" />
-        {
-          !conf.production && <Flex justify="end">
+        {!conf.production && (
+          <Flex justify="end">
             <Button bordered={false} style={styles.setting} onPress={this.goToOptions}>
               <Icon bordered={false} name="setting" fill="#FFCB00" />
             </Button>
           </Flex>
-        }
+        )}
 
-        <Flex align="center" direction="column" style={{ flex: 1 }}>
+        <Flex align="center" direction="column" style={{flex: 1}}>
           <Flex justify="center" align="center" direction="column" style={styles.header}>
             <Icon xml={logoLight} size={75} />
             <H4 style={styles.titie}>Sign In</H4>
-            {
-              !conf.production && <Text style={styles.hostNotice}>{hostType}</Text>
-            }
+            {!conf.production && <Text style={styles.hostNotice}>{hostType}</Text>}
             <P style={styles.description}>Enter username and password.</P>
           </Flex>
-          <Flex align="center" direction="column" style={{ flex: 1 }}>
+          <Flex align="center" direction="column" style={{flex: 1}}>
             <Flex style={styles.content} direction="column" justify="center" align="center">
               <TextInput
                 value={formData.username}
@@ -86,13 +83,12 @@ class SigninScreen extends Component {
               <Spacing size={23} />
               <Button
                 style={styles.button}
-                textStyle={{ fontSize: 16, fontWeight: '200' }}
+                textStyle={{fontSize: 16, fontWeight: '200'}}
                 bordered={false}
                 color="#BFBFBF"
                 loading={loading.login}
                 disabled={loading.login}
-                onPress={this.onSubmit}
-              >
+                onPress={this.onSubmit}>
                 Sign In
               </Button>
             </Flex>
@@ -100,23 +96,22 @@ class SigninScreen extends Component {
           <Footer />
         </Flex>
       </SafeAreaView>
-    )
+    );
   }
 }
 
 export default connect(
-  ({ loading, global, users }) => ({
+  ({loading, global, users}) => ({
     loading: loading.effects.users,
     token: global.token,
     formData: users.formData,
   }),
-  ({ users }) => ({
+  ({users}) => ({
     login: users.login,
     update: users.update,
     updateForm: users.updateForm,
   }),
 )(SigninScreen);
-
 
 const styles = StyleSheet.create({
   block: {
@@ -167,5 +162,5 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: 'center',
     backgroundColor: '#FFCB00',
-  }
+  },
 });

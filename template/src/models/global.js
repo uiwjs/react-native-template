@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import { userAuth } from '../services/users';
+import {userAuth} from '../services/users';
 import conf from '../config';
 
 export default {
@@ -12,15 +12,14 @@ export default {
     apihost: null,
   },
   reducers: {
-    update: (state, payload) => ({ ...state, ...payload }),
+    update: (state, payload) => ({...state, ...payload}),
   },
   effects: dispatch => ({
-    async authToken(_, { global }) {
-
+    async authToken(_, {global}) {
       let host = await AsyncStorage.getItem('apihost');
       if (!host && conf.hosts[0]) {
         await AsyncStorage.setItem('apihost', JSON.stringify(conf.hosts[0]));
-        await this.update({ apihost: conf.hosts[0] });
+        await this.update({apihost: conf.hosts[0]});
       }
 
       if (!global.token) {
@@ -30,10 +29,10 @@ export default {
 
       const data = await userAuth();
       if (data && data.token) {
-        await this.update({ authState: true, token: data.token });
+        await this.update({authState: true, token: data.token});
       } else {
-        await this.update({ authState: true, token: null });
+        await this.update({authState: true, token: null});
       }
-    }
+    },
   }),
 };

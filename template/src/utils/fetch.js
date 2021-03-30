@@ -1,9 +1,9 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import { Alert } from 'react-native';
+import {Alert} from 'react-native';
 import Global from '../global';
 
 export default async function request(url, options) {
-  let { method = 'POST', body = '', serverId = 'projectId', formdataBody, headers, ...params } = options || {};
+  let {method = 'POST', body = '', serverId = 'projectId', formdataBody, headers, ...params} = options || {};
   if (typeof body !== 'string') {
     body = JSON.stringify(body);
   }
@@ -20,7 +20,7 @@ export default async function request(url, options) {
     host = host.url;
   }
   if (token) {
-    header['Authorization'] = token;
+    header.Authorization = token;
   }
   if (formdataBody) {
     // header['content-type'] = 'application/x-www-form-urlencoded';
@@ -40,7 +40,7 @@ export default async function request(url, options) {
   return fetch(fetchURL, {
     method,
     body: body,
-    headers: { ...header },
+    headers: {...header},
     ...params,
   })
     .then(async response => {
@@ -49,8 +49,8 @@ export default async function request(url, options) {
         return data;
       }
       if (/(401)/.test(response.status)) {
-        Global.navigation.navigate('SignIn')
-        return ;
+        Global.navigation.navigate('SignIn');
+        return;
       }
       Alert.alert(`Request Error ${response.status}`, `E2111: ${data.message} - ${fetchURL} - ${JSON.stringify(data)}`);
     })

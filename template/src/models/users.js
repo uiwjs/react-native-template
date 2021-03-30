@@ -1,6 +1,6 @@
-import { Alert } from 'react-native';
+import {Alert} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
-import { userLogin } from '../services/users';
+import {userLogin} from '../services/users';
 import Global from '../global';
 
 export default {
@@ -13,15 +13,15 @@ export default {
     },
   },
   reducers: {
-    update: (state, payload) => ({ ...state, ...payload }),
+    update: (state, payload) => ({...state, ...payload}),
     updateForm: (state, payload) => ({
       ...state,
-      formData: { ...state.formData, ...payload },
+      formData: {...state.formData, ...payload},
     }),
   },
   effects: dispatch => ({
     // 登录
-    async login(_, { users, global }) {
+    async login(_, {users, global}) {
       const data = await userLogin(users.formData);
       if (data && data.token && data.data) {
         await AsyncStorage.setItem('token', data.token);
@@ -31,8 +31,8 @@ export default {
           await AsyncStorage.setItem('cachPassword', users.formData.password);
         }
         await AsyncStorage.setItem('userData', JSON.stringify(data.data));
-        await dispatch.global.update({ token: data.token });
-        await this.update({ userData: data.data });
+        await dispatch.global.update({token: data.token});
+        await this.update({userData: data.data});
         if (Global.navigation) {
           // Global.navigation.navigate('Home');
           Global.navigation.replace('Home');
@@ -44,8 +44,8 @@ export default {
     async logout() {
       await AsyncStorage.removeItem('token');
       await AsyncStorage.removeItem('userData');
-      dispatch.global.update({ token: null });
-      dispatch.users.update({ userData: null });
+      dispatch.global.update({token: null});
+      dispatch.users.update({userData: null});
       Global.navigation.navigate('SignIn');
     },
   }),
