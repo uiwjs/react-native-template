@@ -31,7 +31,7 @@
     "react-native-screens": "2.18.1",
     "react-native-svg": "12.1.0",
     "react-redux": "7.2.3",
-    "redux": "4.0.5"
+    "redux": "4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
