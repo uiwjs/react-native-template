@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {TextInput, SafeAreaView, View, Text, StatusBar, StyleSheet, ScrollView, Platform, KeyboardAvoidingView} from 'react-native';
 import {Button, WingBlank, Icon, Flex, Spacing, H4, List} from '@uiw/react-native';
 import conf from '../../config';

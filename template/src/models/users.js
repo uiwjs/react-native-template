@@ -1,5 +1,5 @@
 import {Alert} from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {userLogin} from '../services/users';
 import Global from '../global';
 
