@@ -15,6 +15,20 @@ npm run api
 npm run ios
 ```
 
+**⚠️⚠️ MacBook Pro with a M1 ⚠️⚠️**
+
+```bash
+# Install ffi
+sudo arch -x86_64 gem install ffi
+
+# Clear pods.
+pod deintegrate
+# pod rm Podfile.lock
+arch -x86_64 pod install
+# Re-install pods
+arch -x86_64 pod install --repo-update --verbose
+```
+
 ## Main Directory Structure
 
 ```
