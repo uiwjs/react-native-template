@@ -38,7 +38,7 @@ npm uninstall -g react-native-cli
 
 Further information can be found here: https://github.com/react-native-community/cli#about
 
-**⚠️ MacBook Pro with a M1**
+**⚠️⚠️ MacBook Pro with a M1 ⚠️⚠️**
 
 ```bash
 # Install ffi
@@ -47,7 +47,6 @@ sudo arch -x86_64 gem install ffi
 # Re-install dependency
 arch -x86_64 pod install
 ```
-
 
 **`react-native@0.61.0` or higher**
 
@@ -62,6 +61,10 @@ you can also install the new CLI globally (`npm i -g @react-native-community/cli
 
 ```bash
 npx react-native init MyApp --template @uiw/react-native-template
+
+cd MyApp/ios
+# Installing CocoaPods dependencies
+pod install 
 ```
 
 ```bash
