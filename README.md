@@ -44,12 +44,17 @@ Further information can be found here: https://github.com/react-native-community
 # Install ffi
 sudo arch -x86_64 gem install ffi
 
+rm -rf Pods Podfile.lock
+
 # Clear pods.
 pod deintegrate
 # pod rm Podfile.lock
 arch -x86_64 pod install
 # Re-install pods
 arch -x86_64 pod install --repo-update --verbose
+
+yarn run ios # Run instructions for iOS
+yarn run api
 ```
 
 **`react-native@0.61.0` or higher**
