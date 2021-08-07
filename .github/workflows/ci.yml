@@ -23,3 +23,6 @@ jobs:
 
       - run: yarn install
       - run: yarn run start
+      - run: git status
+      - run: npm install @jsdevtools/npm-publish -g
+      - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./template/package.json
