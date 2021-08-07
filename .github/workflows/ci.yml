@@ -56,6 +56,10 @@ jobs:
             ${{ steps.changelog.outputs.compareurl }}
             ${{ steps.changelog.outputs.changelog }}
 
+      - name: HelloWorld -> Build Android Release
+        working-directory: HelloWorld
+        run: cd android && ./gradlew assembleRelease
+
       - run: yarn run start
       - run: git status
       - run: npm install @jsdevtools/npm-publish -g
