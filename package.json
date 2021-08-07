@@ -1,6 +1,12 @@
 {
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "start": "node scripts/copied.mjs"
+  },
+  "devDependencies": {
+    "fs-extra": "10.0.0"
+  },
   "workspaces": {
     "packages": [
       "HelloWorld"
