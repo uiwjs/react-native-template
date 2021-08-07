@@ -26,11 +26,11 @@ This template includes the following:
 
 ## Installation and Usage
 
-⚠️ This template only works with the new CLI. This template is intended for React Native versions `>= 0.61`. It has not been tested with previous versions. 
+🚧 This template only works with the new CLI. This template is intended for React Native versions `>= 0.61`. It has not been tested with previous versions. 
 
 **Note on the legacy CLI**
 
-⚠️ There seems to be quite some confusion about the legacy CLI. This template only works with the new CLI. Make sure you have uninstalled the legacy `react-native-cli` first (`npm uninstall -g react-native-cli`), for the below command to work. 
+🚧 There seems to be quite some confusion about the legacy CLI. This template only works with the new CLI. Make sure you have uninstalled the legacy `react-native-cli` first (`npm uninstall -g react-native-cli`), for the below command to work. 
 
 ```bash
 npm uninstall -g react-native-cli
@@ -38,7 +38,7 @@ npm uninstall -g react-native-cli
 
 Further information can be found here: https://github.com/react-native-community/cli#about
 
-**⚠️⚠️ MacBook Pro with a M1 ⚠️⚠️**
+**🚧🚧 MacBook Pro with a M1 🚧🚧**
 
 ```bash
 # Install ffi
