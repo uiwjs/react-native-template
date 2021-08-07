@@ -1,4 +1,10 @@
+# node.js
 node_modules/
 package-lock.json
+npm-debug.log
+yarn-error.log
+yarn.lock
 .vscode/
 .DS_Store
+.idea
+.gradle
