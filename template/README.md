@@ -4,7 +4,7 @@
 [![](https://img.shields.io/github/issues/uiwjs/react-native-template.svg?style=flat-square)](https://github.com/uiwjs/react-native-template/issues)
 [![](https://img.shields.io/github/forks/uiwjs/react-native-template.svg?style=flat-square)](https://github.com/uiwjs/react-native-template/network)
 [![](https://img.shields.io/github/stars/uiwjs/react-native-template.svg?style=flat-square)](https://github.com/uiwjs/react-native-template/stargazers)
-[![](https://img.shields.io/github/release/uiwjs/react-native-template?style=flat-square)](https://github.com/uiwjs/react-baidu-map/releases)
+[![](https://img.shields.io/github/release/uiwjs/react-native-template?style=flat-square)](https://uimjs.github.io/#/docs/react-native-template/releases)
 
 [React Native](https://github.com/facebook/react-native) Template for [@uiw/react-native](https://github.com/uiwjs/react-native-uiw). 
 
