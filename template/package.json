@@ -2,6 +2,7 @@
   "name": "@uiw/react-native-template",
   "version": "1.8.0",
   "description": "React Native template for react-native-uiw.",
+  "homepage": "https://uimjs.github.io/#/docs/react-native-template",
   "scripts": {
     "prepublishOnly": "npm --no-git-tag-version version $TRAVIS_TAG"
   },
@@ -27,9 +28,5 @@
     "rematch"
   ],
   "author": "Kenny Wong <wowohoo@qq.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/uiwjs/react-native-template/issues"
-  },
-  "homepage": "https://github.com/uiwjs/react-native-template#readme"
+  "license": "MIT"
 }
