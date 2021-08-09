@@ -17,7 +17,7 @@
     "@react-native-community/masked-view": "0.1.11",
     "@react-navigation/bottom-tabs": "6.0.2",
     "@react-navigation/native": "6.0.2",
-    "@react-navigation/stack": "6.0.2",
+    "@react-navigation/stack": "6.0.3",
     "@rematch/core": "2.0.1",
     "@rematch/loading": "2.0.1",
     "@uiw/formatter": "1.2.4",
