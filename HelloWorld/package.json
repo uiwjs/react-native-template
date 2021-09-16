@@ -21,7 +21,7 @@
     "@rematch/core": "2.1.0",
     "@rematch/loading": "2.1.0",
     "@uiw/formatter": "1.2.4",
-    "@uiw/react-native": "2.7.2",
+    "@uiw/react-native": "2.7.3",
     "react": "17.0.2",
     "react-native": "0.65.1",
     "react-native-device-info": "8.3.1",
