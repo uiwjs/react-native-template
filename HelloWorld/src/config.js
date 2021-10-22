@@ -23,7 +23,7 @@ export default {
     {
       label: 'Native Mock API',
       type: 'Test',
-      url: 'http://192.168.3.9:3721',
+      url: 'http://localhost:3721',
     },
     {
       label: 'Production Environment',
