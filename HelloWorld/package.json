@@ -19,7 +19,7 @@
     "@react-navigation/native": "6.0.5",
     "@react-navigation/stack": "6.0.10",
     "@rematch/core": "2.1.1",
-    "@rematch/loading": "2.1.0",
+    "@rematch/loading": "2.1.1",
     "@uiw/formatter": "1.2.4",
     "@uiw/react-native": "2.8.1",
     "react": "17.0.2",
