@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+
 jobs:
   build-deploy:
     runs-on: ubuntu-18.04
@@ -13,15 +14,32 @@ jobs:
           node-version: 14
 
       - name: Generate Changelog
-        uses: jaywcjlove/changelog-generator@v1.4.6
+        uses: jaywcjlove/changelog-generator@v1.4.8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           head-ref: ${{ steps.create_tag.outputs.version }}
-          filter-author: (小弟调调™|Renovate Bot)
           filter: '[R|r]elease[d]\s+[v|V]\d(\.\d+){0,2}'
 
       - run: yarn install
+      # - name: HelloWorld -> Build Android Release
+      #   working-directory: HelloWorld
+      #   run: cd android && ./gradlew assembleRelease
 
+      - run: yarn run start
+      - run: git status
+
+      - run: npm i markdown-to-html-cli -g
+      - run: mkdir -p build
+      - run: markdown-to-html --output build/index.html
+
+      - run: npm install @jsdevtools/npm-publish -g
+      - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./template/package.json
+
+  release:
+    runs-on: ubuntu-18.04
+    needs: build-deploy
+    steps:
+      - uses: actions/checkout@v2
       - name: Is a tag created auto?
         id: create_tag
         uses: jaywcjlove/create-tag-action@v1.2.1
@@ -31,12 +49,11 @@ jobs:
 
       - name: Generate Changelog
         id: changelog
-        uses: jaywcjlove/changelog-generator@v1.4.6
+        uses: jaywcjlove/changelog-generator@v1.4.8
         if: steps.create_tag.outputs.successful
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           head-ref: ${{ steps.create_tag.outputs.version }}
-          filter-author: (小弟调调™|Renovate Bot)
           filter: '[R|r]elease[d]\s+[v|V]\d(\.\d+){0,2}'
 
       - name: Create Release
@@ -56,12 +73,3 @@ jobs:
             ${{ steps.changelog.outputs.compareurl }}
             
             ${{ steps.changelog.outputs.changelog }}
-
-      # - name: HelloWorld -> Build Android Release
-      #   working-directory: HelloWorld
-      #   run: cd android && ./gradlew assembleRelease
-
-      - run: yarn run start
-      - run: git status
-      - run: npm install @jsdevtools/npm-publish -g
-      - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./template/package.json
