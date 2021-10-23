@@ -343,11 +343,11 @@ PODS:
     - React-Core
   - RNCMaskedView (0.1.11):
     - React
-  - RNDeviceInfo (8.4.0):
+  - RNDeviceInfo (8.4.1):
     - React-Core
   - RNGestureHandler (1.10.3):
     - React-Core
-  - RNReanimated (2.3.0-beta.3):
+  - RNReanimated (2.2.3):
     - DoubleConversion
     - FBLazyVector
     - FBReactNativeSpec
@@ -589,14 +589,14 @@ SPEC CHECKSUMS:
   ReactCommon: 620442811dc6f707b4bf5e3b27d4f19c12d5a821
   RNCAsyncStorage: 26f25150da507524a7815f2ada06ca0967f65633
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
-  RNDeviceInfo: 8a06046616c6b5c03787b04f265fa3b52b37c80b
+  RNDeviceInfo: 55175b0bd852c1c5d70d76efc04ed77799cef638
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
-  RNReanimated: ee76770869ffe2a76fcd612d4204cc7787169593
+  RNReanimated: b04ef2a4f0cb61b062bbcf033f84a9e470f4f60b
   RNScreens: 6e1ea5787989f92b0671049b808aef64fa1ef98c
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   Yoga: 2b4a01651f42a32f82e6cef3830a3ba48088237f
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 7652735c9041836fd1d809715cee13e11f7aa26c
+PODFILE CHECKSUM: e210a75d3f18280e7056d6c54b4a5ab1baec678f
 
 COCOAPODS: 1.10.1
