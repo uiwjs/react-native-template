@@ -125,10 +125,6 @@ def enableHermes = project.ext.react.get("enableHermes", true);
  */
 def nativeArchitectures = project.getProperties().get("reactNativeDebugArchitectures")
 
-/**
- * Architectures to build native code for in debug.
- */
-def nativeArchitectures = project.getProperties().get("reactNativeDebugArchitectures")
 
 android {
     ndkVersion rootProject.ext.ndkVersion
