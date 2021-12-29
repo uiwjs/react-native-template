@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-native-template",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "React Native template for react-native-uiw.",
   "homepage": "https://uimjs.github.io/#/docs/react-native-template",
   "scripts": {
