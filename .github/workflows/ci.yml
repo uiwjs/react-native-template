@@ -30,7 +30,13 @@ jobs:
 
       - run: npm i markdown-to-html-cli -g
       - run: mkdir -p build
-      - run: markdown-to-html --output build/index.html
+      - run: markdown-to-html --output build/index.html --title "React Native UIW Template" --github-corners https://github.com/uiwjs/react-native-template --description="React Native Template for @uiw/react-native." --keywords="react-native-template,react-native,template"
+
+      - name: Deploy Website
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
 
       - run: npm install @jsdevtools/npm-publish -g
       - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./template/package.json
@@ -54,6 +60,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           head-ref: ${{ steps.create_tag.outputs.version }}
+          filter-author: (renovate-bot|Renovate Bot)
           filter: '[R|r]elease[d]\s+[v|V]\d(\.\d+){0,2}'
 
       - name: Create Release
