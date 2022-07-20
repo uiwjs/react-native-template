@@ -107,3 +107,6 @@ Contributions are very welcome. Please check out the [contributing document](CON
 ## License
 
 This project is [MIT](LICENSE) licensed.
+
+# Announcing 0.69
+- [React Native 0.69](https://github.com/facebook/react-native-website/blob/main/website/blog/2022-06-21-version-069.md)
