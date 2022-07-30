@@ -1,35 +1,31 @@
 {
-  "name": "@uiw/react-native-template",
-  "version": "1.6.0",
-  "description": "React Native template for react-native-uiw.",
-  "scripts": {
-    "prepublishOnly": "npm --no-git-tag-version version $TRAVIS_TAG"
-  },
-  "files": [
-    "template",
-    "template.config.js"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/uiwjs/react-native-template.git"
-  },
-  "keywords": [
-    "react-native-template",
-    "react-native",
-    "jest",
-    "template",
-    "uiw",
-    "redux",
-    "react",
-    "react-navigation",
-    "navigation",
-    "boilerplate",
-    "rematch"
-  ],
-  "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/uiwjs/react-native-template/issues"
+  "private": true,
+  "scripts": {
+    "start": "node scripts/copied.mjs"
   },
-  "homepage": "https://github.com/uiwjs/react-native-template#readme"
+  "devDependencies": {
+    "fs-extra": "10.0.0"
+  },
+  "workspaces": {
+    "packages": [
+      "HelloWorld"
+    ],
+    "nohoist": [
+      "**/@rematch",
+      "**/@rematch/**",
+      "**/react",
+      "**/react*",
+      "**/react/**",
+      "**/react*/**",
+      "**/@react-navigation",
+      "**/@react-navigation/**",
+      "**/@react-native-community",
+      "**/@react-native-community/**",
+      "**/@react-native-async-storage",
+      "**/@react-native-async-storage/**",
+      "**/@babel",
+      "**/@babel/**"
+    ]
+  }
 }

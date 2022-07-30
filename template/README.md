@@ -1,38 +1,112 @@
-HelloWorld
----
+# React Native UIW Template
 
-React Native UIW Template
+[![](https://img.shields.io/npm/v/@uiw/react-native-template.svg?color=success&style=flat-square)](https://www.npmjs.com/package/@uiw/react-native-template)
+[![](https://img.shields.io/github/issues/uiwjs/react-native-template.svg?style=flat-square)](https://github.com/uiwjs/react-native-template/issues)
+[![](https://img.shields.io/github/forks/uiwjs/react-native-template.svg?style=flat-square)](https://github.com/uiwjs/react-native-template/network)
+[![](https://img.shields.io/github/stars/uiwjs/react-native-template.svg?style=flat-square)](https://github.com/uiwjs/react-native-template/stargazers)
+[![](https://img.shields.io/github/release/uiwjs/react-native-template?style=flat-square)](https://uimjs.github.io/#/docs/react-native-template/releases)
 
-## Development
+[React Native](https://github.com/facebook/react-native) Template for [@uiw/react-native](https://github.com/uiwjs/react-native-uiw). 
+
+
+> Migrate from @uiw/react-native-template 0.1.2 to [v1.1.0](https://github.com/uiwjs/react-native-template/releases/tag/v1.1.0)
+
+## Features
+
+This template includes the following:
+
+- Elegant usage directly within the [React Native CLI](https://github.com/react-native-community/cli)
+- [React Native](https://github.com/facebook/react-native) 0.60 support (now with Hooks! 🙌).
+- Easy to use and understand folder structure to get you up and running as fast as possible.
+- [@uiw/react-native](https://github.com/uiwjs/react-native-uiw) component framework and themes.
+- Using [react-navigation](https://github.com/react-navigation/react-navigation) to routing and navigate your React Native applications.
+- [Redux](https://github.com/reduxjs/redux) support (with [@rematch](https://github.com/rematch/rematch) example)
+- [ESLint](https://github.com/eslint/eslint), and [Prettier](https://github.com/prettier/prettier) configured out-of-the-box
+- Using [mocker-api](https://github.com/jaywcjlove/mocker-api) that creates mocks for REST APIs.
+
+## Installation and Usage
+
+🚧 This template only works with the new CLI. This template is intended for React Native versions `>= 0.61`. It has not been tested with previous versions. 
+
+**Note on the legacy CLI**
+
+🚧 There seems to be quite some confusion about the legacy CLI. This template only works with the new CLI. Make sure you have uninstalled the legacy `react-native-cli` first (`npm uninstall -g react-native-cli`), for the below command to work. 
 
 ```bash
-cd ios/ && pod install && cd ../
-
-# Mocker API
-npm run api
-
-# Run the app with iOS.
-npm run ios
+npm uninstall -g react-native-cli
 ```
 
-## Main Directory Structure
+Further information can be found here: https://github.com/react-native-community/cli#about
 
+**🚧🚧 MacBook Pro with a M1 🚧🚧**
+
+```bash
+# Install ffi
+sudo arch -x86_64 gem install ffi
+
+rm -rf Pods Podfile.lock
+
+# Clear pods.
+pod deintegrate
+# pod rm Podfile.lock
+arch -x86_64 pod install
+# Re-install pods
+arch -x86_64 pod install --repo-update --verbose
+
+yarn run ios # Run instructions for iOS
+yarn run api
 ```
-.
-├── mocker                            # mocker data
-├── android                           # native android code
-├── ios                               # native ios code
-├── src                               # code directory
-│   ├── components                    # react components
-│   ├── models                        # The models brings together state, reducers, async actions & action creators in one place
-│   ├── pages                         # route pages
-│   ├── routes                        # route configuration
-│   ├── services                      # api request
-│   ├── utils                         # public method
-│   ├── App.js                        # route entery page
-│   ├── config.js                     # app configuration
-│   └── global.js                     # Store some global objects for easy calling
-├── .eslintrc                         # eslint configuration
-├── index.js                          # app entry file
-└── package.json                      # This document is all you need to know about what’s required in your package.json file.
+
+**`react-native@0.61.0` or higher**
+
+```sh
+npx react-native init MyApp --template @uiw/react-native-template
+# npx react-native init MyApp --template @uiw/react-native-template@v1.0.0
 ```
+
+**If you wish to not use `npx`**
+
+you can also install the new CLI globally (`npm i -g @react-native-community/cli` or `yarn global add @react-native-community/cli`).
+
+```bash
+npx react-native init MyApp --template @uiw/react-native-template
+
+cd MyApp/ios
+# Installing CocoaPods dependencies
+pod install 
+```
+
+```bash
+# This will initialize new project using template from TEMPLATE_NAME package
+npx react-native init ProjectName --template ${TEMPLATE_NAME}
+
+# This will initialize new project using init command from react-native@VERSION
+# but will use TEMPLATE_NAME custom template
+npx react-native@${VERSION} init ProjectName --template ${TEMPLATE_NAME}
+```
+
+## Dependencies
+
+```bash
+@react-navigation/native
+  ├──react-native-gesture-handler
+  ├──react-native-reanimated
+  ├──react-native-screens
+  ├──react-native-safe-area-context
+  └──@react-native-community/masked-view
+```
+
+## Links
+
+- [React Native upgrade helper](https://react-native-community.github.io/upgrade-helper/)
+
+## Contributing
+
+Contributions are very welcome. Please check out the [contributing document](CONTRIBUTING.md).
+
+## License
+
+This project is [MIT](LICENSE) licensed.
+
+# Announcing 0.69
+- [React Native 0.69](https://github.com/facebook/react-native-website/blob/main/website/blog/2022-06-21-version-069.md)
