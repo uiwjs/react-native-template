@@ -14,7 +14,6 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "HelloWorld";
   }
-
   /**
    * Returns the instance of the {@link ReactActivityDelegate}. There the RootView is created and
    * you can specify the renderer you wish to use - the new renderer (Fabric) or the old renderer
