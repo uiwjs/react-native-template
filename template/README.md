@@ -112,13 +112,15 @@ npx react-native@${VERSION} init ProjectName --template ${TEMPLATE_NAME}
 
 - [React Native upgrade helper](https://react-native-community.github.io/upgrade-helper/)
 
-## Contributing
+## Contributors
 
-Contributions are very welcome. Please check out the [contributing document](CONTRIBUTING.md).
+As always, thanks to our amazing contributors!
+
+<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT--><!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
+
+Made with [contributors](https://github.com/jaywcjlove/github-action-contributors).
+
 
 ## License
 
 This project is [MIT](LICENSE) licensed.
-
-# Announcing 0.69
-- [React Native 0.69](https://github.com/facebook/react-native-website/blob/main/website/blog/2022-06-21-version-069.md)

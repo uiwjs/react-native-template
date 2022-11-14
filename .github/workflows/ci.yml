@@ -6,19 +6,33 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 16
 
       - name: Generate Changelog
-        uses: jaywcjlove/changelog-generator@v1.4.8
+        uses: jaywcjlove/changelog-generator@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           head-ref: ${{ steps.create_tag.outputs.version }}
           filter: '[R|r]elease[d]\s+[v|V]\d(\.\d+){0,2}'
+
+      - name: Generate Contributors Images
+        uses: jaywcjlove/github-action-contributors@main
+        id: contributors
+        with:
+          avatarSize: 42
+
+      - name: Modify template/README.md
+        uses: jaywcjlove/github-action-modify-file-content@main
+        with:
+          path: template/README.md
+          openDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-->'
+          closeDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->'
+          body: ${{steps.contributors.outputs.htmlList}}
 
       - run: yarn install
       # - name: HelloWorld -> Build Android Release
@@ -42,20 +56,20 @@ jobs:
       - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./template/package.json
 
   release:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     needs: build-deploy
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Is a tag created auto?
         id: create_tag
-        uses: jaywcjlove/create-tag-action@v1.2.1
+        uses: jaywcjlove/create-tag-action@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           package-path: ./template/package.json
 
       - name: Generate Changelog
         id: changelog
-        uses: jaywcjlove/changelog-generator@v1.4.8
+        uses: jaywcjlove/changelog-generator@main
         if: steps.create_tag.outputs.successful
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
