@@ -38,6 +38,18 @@ npm uninstall -g react-native-cli
 
 Further information can be found here: https://github.com/react-native-community/cli#about
 
+
+**🚧🚧 If you wish to not use `react-native@0.70.0` or higher**
+[help](https://github.com/facebook/react-native/issues/34608#)
+```
+Check whether your ruby version is higher than 2.7.5
+```
+
+```
+bundle install
+cd ios && bundle exec pod install
+```
+
 **🚧🚧 MacBook Pro with a M1 🚧🚧**
 
 ```bash
