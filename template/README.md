@@ -116,7 +116,30 @@ npx react-native@${VERSION} init ProjectName --template ${TEMPLATE_NAME}
 
 As always, thanks to our amazing contributors!
 
-<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT--><!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
+<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT--><a href="https://github.com/jaywcjlove" title="小弟调调™">
+  <img src="https://avatars.githubusercontent.com/u/1680273?v=4" width="42;" alt="小弟调调™"/>
+</a>
+<a href="https://github.com/renovate-bot" title="Mend Renovate">
+  <img src="https://avatars.githubusercontent.com/u/25180681?v=4" width="42;" alt="Mend Renovate"/>
+</a>
+<a href="https://github.com/ChenlingasMx" title="Chenling">
+  <img src="https://avatars.githubusercontent.com/u/59959718?v=4" width="42;" alt="Chenling"/>
+</a>
+<a href="https://github.com/cuilanxin" title="崔兰鑫">
+  <img src="https://avatars.githubusercontent.com/u/57083007?v=4" width="42;" alt="崔兰鑫"/>
+</a>
+<a href="https://github.com/matuancc" title="cc">
+  <img src="https://avatars.githubusercontent.com/u/33281802?v=4" width="42;" alt="cc"/>
+</a>
+<a href="https://github.com/Amber-Nan" title="Amber-Nan">
+  <img src="https://avatars.githubusercontent.com/u/66067296?v=4" width="42;" alt="Amber-Nan"/>
+</a>
+<a href="https://github.com/wwmmzz" title="day2">
+  <img src="https://avatars.githubusercontent.com/u/26562795?v=4" width="42;" alt="day2"/>
+</a>
+<a href="https://github.com/xingyuefeng" title="xyf">
+  <img src="https://avatars.githubusercontent.com/u/24369183?v=4" width="42;" alt="xyf"/>
+</a><!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
 
 Made with [contributors](https://github.com/jaywcjlove/github-action-contributors).
 
