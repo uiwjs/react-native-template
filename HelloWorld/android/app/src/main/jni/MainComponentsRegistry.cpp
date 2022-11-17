@@ -3,6 +3,7 @@
 #include <CoreComponentsRegistry.h>
 #include <fbjni/fbjni.h>
 #include <react/renderer/componentregistry/ComponentDescriptorProviderRegistry.h>
+#include <react/renderer/components/rncore/ComponentDescriptors.h>
 #include <rncli.h>
 
 namespace facebook {
@@ -33,7 +34,7 @@ MainComponentsRegistry::initHybrid(
 
   auto buildRegistryFunction =
       [](EventDispatcher::Weak const &eventDispatcher,
-         ContextContainer::Shared const &contextContainer)
+       ContextContainer::Shared const &contextContainer)
       -> ComponentDescriptorRegistry::Shared {
     auto registry = MainComponentsRegistry::sharedProviderRegistry()
                         ->createComponentDescriptorRegistry(
