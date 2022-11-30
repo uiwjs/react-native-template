@@ -83,7 +83,7 @@ const SigninScreen = ({
               autoCompleteType="password"
               secureTextEntry={true}
               style={styles.input}
-              onChangeText={(text) => update({ ...store, formData: { ...formData, password: text } })}
+              onChangeText={(text) => setStore({ ...store, formData: { ...formData, password: text } })}
             />
             <Spacing size={23} />
             <Button
