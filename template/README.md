@@ -139,6 +139,9 @@ As always, thanks to our amazing contributors!
 </a>
 <a href="https://github.com/xingyuefeng" title="xyf">
   <img src="https://avatars.githubusercontent.com/u/24369183?v=4" width="42;" alt="xyf"/>
+</a>
+<a href="https://github.com/SunLxy" title="逍遥">
+  <img src="https://avatars.githubusercontent.com/u/49544090?v=4" width="42;" alt="逍遥"/>
 </a><!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
 
 Made with [contributors](https://github.com/jaywcjlove/github-action-contributors).
