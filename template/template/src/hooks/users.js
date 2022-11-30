@@ -5,7 +5,7 @@ import { useQuery, useMutation } from 'react-query'
 import Global from '../global';
 
 // 登录
-export const login = ({ config = {}, update, formData, remember }) => {
+export const useLogin = ({ config = {}, update, formData, remember }) => {
   const mutation = useMutation({
     mutationFn: userLogin,
     onSuccess: async (data) => {
@@ -30,7 +30,7 @@ export const login = ({ config = {}, update, formData, remember }) => {
 }
 
 // 验证token
-export const authToken = ({ token, update }) => {
+export const useAuthToken = ({ token, update }) => {
   const mutation = useMutation({
     mutationFn: userAuth,
     onMutate: async () => {

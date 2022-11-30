@@ -7,7 +7,7 @@ import Global from '../../global';
 import Footer from '../../components/Footer';
 import { logoLight } from '../../components/icons/signin';
 import conf from '../../config';
-import { login } from '../../hooks/users'
+import { useLogin } from '../../hooks/users'
 
 const SigninScreen = ({
   navigation,
@@ -23,7 +23,7 @@ const SigninScreen = ({
   })
   const { hostType, remember, formData } = store
 
-  const { mutate, isLoading } = login({
+  const { mutate, isLoading } = useLogin({
     update,
     formData,
     remember
@@ -105,7 +105,7 @@ const SigninScreen = ({
 }
 
 export default connect(
-  ({}) => ({}),
+  ({ }) => ({}),
   ({ global }) => ({
     update: global.update
   }),

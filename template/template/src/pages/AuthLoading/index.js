@@ -5,7 +5,7 @@ import { Flex, Loader, H3, Icon } from '@uiw/react-native';
 import Global from '../../global';
 import { logoLight } from '../../components/icons/signin';
 import Footer from '../../components/Footer';
-import { authToken } from '../../hooks/users'
+import { useAuthToken } from '../../hooks/users'
 
 const AuthLoadingScreen = ({
   navigation,
@@ -14,7 +14,7 @@ const AuthLoadingScreen = ({
   authState,
   children
 }) => {
-  const { mutate, isLoading } = authToken({ update, token })
+  const { mutate, isLoading } = useAuthToken({ update, token })
   useEffect(() => {
     if (navigation && Global) {
       Global.navigation = navigation;

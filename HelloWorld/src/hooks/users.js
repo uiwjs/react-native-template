@@ -30,7 +30,7 @@ export const login = ({ config = {}, update, formData, remember }) => {
 }
 
 // 验证token
-export const authToken = ({ token, update }) => {
+export const useAuthToken = ({ token, update }) => {
   const mutation = useMutation({
     mutationFn: userAuth,
     onMutate: async () => {
