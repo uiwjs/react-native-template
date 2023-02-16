@@ -32,7 +32,9 @@
     "react-native-svg": "12.1.1",
     "react-redux": "7.2.6",
     "redux": "4.1.2",
-    "react-query":"~3.39.2"
+    "react-query":"~3.39.2",
+    "kkt":"^7.4.1",
+    "@uiw/react-native-doc":"^3.0.7"
   },
   "devDependencies": {
     "@babel/core": "~7.18.9",
