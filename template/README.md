@@ -96,7 +96,10 @@ npx react-native init ProjectName --template ${TEMPLATE_NAME}
 # but will use TEMPLATE_NAME custom template
 npx react-native@${VERSION} init ProjectName --template ${TEMPLATE_NAME}
 ```
-
+## @uiw/react-native-uiw文档本地预览
+```bash
+yarn run doc
+```
 ## Dependencies
 
 ```bash

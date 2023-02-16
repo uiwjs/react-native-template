@@ -10,7 +10,8 @@
     "api": "mocker ./mocker",
     "api2": "NO_PROXY=true mocker ./mocker",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "doc":"kktd @uiw/react-native-doc/doc/build"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "~1.17.11",
@@ -33,7 +34,7 @@
     "react-redux": "7.2.6",
     "redux": "4.1.2",
     "react-query":"~3.39.2",
-    "kkt":"^7.4.1",
+    "@kkt/doc":"^1.0.0",
     "@uiw/react-native-doc":"^3.0.7"
   },
   "devDependencies": {

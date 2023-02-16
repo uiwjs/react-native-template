@@ -25,7 +25,11 @@
       "**/@react-native-async-storage",
       "**/@react-native-async-storage/**",
       "**/@babel",
-      "**/@babel/**"
+      "**/@babel/**",
+      "**/@kkt/doc",
+      "**/@kkt/doc/**",
+      "**/@uiw/react-native-doc",
+      "**/@uiw/react-native-doc/**"
     ]
   }
 }
