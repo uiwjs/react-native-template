@@ -134,8 +134,8 @@ As always, thanks to our amazing contributors!
 <a href="https://github.com/Amber-Nan" title="Amber-Nan">
   <img src="https://avatars.githubusercontent.com/u/66067296?v=4" width="42;" alt="Amber-Nan"/>
 </a>
-<a href="https://github.com/wwmmzz" title="day2">
-  <img src="https://avatars.githubusercontent.com/u/26562795?v=4" width="42;" alt="day2"/>
+<a href="https://github.com/wwmmzz" title="...">
+  <img src="https://avatars.githubusercontent.com/u/26562795?v=4" width="42;" alt="..."/>
 </a>
 <a href="https://github.com/xingyuefeng" title="xyf">
   <img src="https://avatars.githubusercontent.com/u/24369183?v=4" width="42;" alt="xyf"/>
