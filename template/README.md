@@ -100,6 +100,26 @@ npx react-native@${VERSION} init ProjectName --template ${TEMPLATE_NAME}
 ```bash
 yarn run doc
 ```
+
+## Use husky
+
+Edit package.json > prepare script and run it once:
+```bash
+npm pkg set scripts.prepare="husky install"
+npm run prepare
+```
+Add a hook:
+```bash
+npx husky add .husky/pre-commit "npm run precommit"
+git add .husky/pre-commit
+```
+
+Make a commit:
+```bash
+git commit -m "Keep calm and commit"
+# `npm precommit` will run
+```
+
 ## Dependencies
 
 ```bash
