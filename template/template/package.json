@@ -9,8 +9,11 @@
     "test": "jest",
     "api": "mocker ./mocker",
     "api2": "NO_PROXY=true mocker ./mocker",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint . --ext .js,.jsx",
+    "prettier": "prettier --write '**/*.{js,jsx,md,json}'",
+    "precommit": "npm run lint",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install",
     "doc":"kktd @uiw/react-native-doc/doc/build"
   },
   "dependencies": {
@@ -47,8 +50,19 @@
     "jest": "27.2.0",
     "metro-react-native-babel-preset": "^0.72.3",
     "mocker-api": "~2.9.5",
-    "prettier": "~2.7.1",
+    "prettier": "^2.8.0",
+    "lint-staged": "~12.5.0",
+    "husky": "^8.0.0",
     "react-test-renderer": "18.1.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ]
   },
   "jest": {
     "preset": "react-native"
