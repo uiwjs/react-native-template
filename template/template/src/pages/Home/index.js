@@ -1,23 +1,27 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
+import {StatusBar, useColorScheme} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import homeTabData from '../../routes/homeTab';
 
 const BottomTabs = createBottomTabNavigator();
 
-class DashboardScreen extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
-        <StatusBar barStyle="dark-content" />
-        <BottomTabs.Navigator>
-          {homeTabData.map((props, idx) => {
-            return <BottomTabs.Screen key={idx} {...props} />;
-          })}
-        </BottomTabs.Navigator>
-      </React.Fragment>
-    );
-  }
-}
+const DashboardScreen = props => {
+  const colorScheme = useColorScheme();
+  const iconColor = (colorScheme && colorScheme) === 'light' ? '#000' : '#fff';
+  return (
+    <React.Fragment>
+      <StatusBar barStyle="dark-content" />
+      <BottomTabs.Navigator
+        screenOptions={{
+          tabBarActiveTintColor: '#035bb6',
+          tabBarInactiveTintColor: 'gray',
+        }}>
+        {homeTabData({iconColor}).map((props, idx) => {
+          return <BottomTabs.Screen key={idx} {...props} />;
+        })}
+      </BottomTabs.Navigator>
+    </React.Fragment>
+  );
+};
 
 export default DashboardScreen;

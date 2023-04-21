@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {View, Text, SafeAreaView} from 'react-native';
-import {Button, List, Icon} from '@uiw/react-native';
+import {View, SafeAreaView} from 'react-native';
+import {Button, List, Icon, Text} from '@uiw/react-native';
 
 export default class MyScreen extends Component {
   render() {
