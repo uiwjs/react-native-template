@@ -8,8 +8,8 @@ export const stackPageData = [
     name: 'Home',
     component: Home,
     options: {
-      // headerShown: false,
-      // header: () => null
+      headerShown: false,
+      header: () => null,
     },
   },
   {
