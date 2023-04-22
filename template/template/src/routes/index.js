@@ -2,14 +2,15 @@ import Home from "../pages/Home";
 import SignIn from "../pages/SignIn";
 import DevOptions from "../pages/DevOptions";
 import MyHomeSetting from "../pages/MyHome/Setting";
+import TabsScreen from "./tabs";
 
 export const stackPageData = [
   {
-    name: "Home",
-    component: Home,
+    name: "Tab",
+    component: TabsScreen,
     options: {
       headerShown: false,
-      header: () => null,
+      title: "首页",
     },
   },
   {
