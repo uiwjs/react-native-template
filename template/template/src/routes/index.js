@@ -1,19 +1,20 @@
-import Home from "../pages/Home";
-import SignIn from "../pages/SignIn";
-import DevOptions from "../pages/DevOptions";
-import MyHomeSetting from "../pages/MyHome/Setting";
+import Home from '../pages/Home';
+import SignIn from '../pages/SignIn';
+import DevOptions from '../pages/DevOptions';
+import MyHomeSetting from '../pages/MyHome/Setting';
+import TabsScreen from './tabs';
 
 export const stackPageData = [
   {
-    name: "Home",
-    component: Home,
+    name: 'Tab',
+    component: TabsScreen,
     options: {
       headerShown: false,
-      header: () => null,
+      title: '首页',
     },
   },
   {
-    name: "SignIn",
+    name: 'SignIn',
     component: SignIn,
     options: {
       headerShown: false,
@@ -21,7 +22,7 @@ export const stackPageData = [
     },
   },
   {
-    name: "DevOptions",
+    name: 'DevOptions',
     component: DevOptions,
     options: {
       headerShown: false,
@@ -29,10 +30,10 @@ export const stackPageData = [
     },
   },
   {
-    name: "MyHomeSetting",
+    name: 'MyHomeSetting',
     component: MyHomeSetting,
     options: {
-      title: "设置",
+      title: '设置',
     },
   },
 ];

@@ -1,7 +1,7 @@
 import React from 'react';
 import {StatusBar, useColorScheme} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import homeTabData from '../../routes/homeTab';
+import TabsScreen from '../../routes/tabs';
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -16,7 +16,7 @@ const DashboardScreen = props => {
           tabBarActiveTintColor: '#035bb6',
           tabBarInactiveTintColor: 'gray',
         }}>
-        {homeTabData({iconColor}).map((props, idx) => {
+        {TabsScreen({iconColor}).map((props, idx) => {
           return <BottomTabs.Screen key={idx} {...props} />;
         })}
       </BottomTabs.Navigator>

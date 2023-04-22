@@ -18,7 +18,7 @@ export const useLogin = ({ config = {}, update, formData, remember }) => {
         await AsyncStorage.setItem('userData', JSON.stringify(data.data));
         update({ token: data.token, userData: data.data });
         if (Global.navigation) {
-          Global.navigation.replace('Home');
+          Global.navigation.replace('Tab');
         }
       } else if (data && data.message) {
         Alert.alert(`Login failed - ${data.error}`, data.message);
