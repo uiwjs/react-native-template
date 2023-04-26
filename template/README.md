@@ -160,14 +160,14 @@ As always, thanks to our amazing contributors!
 <a href="https://github.com/wwmmzz" title="...">
   <img src="https://avatars.githubusercontent.com/u/26562795?v=4" width="42;" alt="..."/>
 </a>
-<a href="https://github.com/panbibi" title="panbibi">
-  <img src="https://avatars.githubusercontent.com/u/81728478?v=4" width="42;" alt="panbibi"/>
-</a>
 <a href="https://github.com/xingyuefeng" title="xyf">
   <img src="https://avatars.githubusercontent.com/u/24369183?v=4" width="42;" alt="xyf"/>
 </a>
 <a href="https://github.com/SunLxy" title="逍遥">
   <img src="https://avatars.githubusercontent.com/u/49544090?v=4" width="42;" alt="逍遥"/>
+</a>
+<a href="https://github.com/panbibi" title="panbibi">
+  <img src="https://avatars.githubusercontent.com/u/81728478?v=4" width="42;" alt="panbibi"/>
 </a><!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
 
 Made with [contributors](https://github.com/jaywcjlove/github-action-contributors).
