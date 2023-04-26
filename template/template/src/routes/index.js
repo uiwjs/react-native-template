@@ -1,4 +1,3 @@
-import Home from "../pages/Home";
 import SignIn from "../pages/SignIn";
 import DevOptions from "../pages/DevOptions";
 import MyHomeSetting from "../pages/MyHome/Setting";

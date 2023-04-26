@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react';
 import { Text, StatusBar, StyleSheet, SafeAreaView } from 'react-native';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Flex, Loader, H3, Icon } from '@uiw/react-native';
 import Global from '../../global';
 import { logoLight } from '../../components/icons/signin';
 import Footer from '../../components/Footer';
 import { useAuthToken } from '../../hooks/users'
 
+
 const AuthLoadingScreen = ({
   navigation,
-  update,
-  token,
-  authState,
   children
 }) => {
-  const { mutate, isLoading } = useAuthToken({ update, token })
+  const { token, authState } = useSelector(state=>state.global)
+  const { mutate, isLoading } = useAuthToken()
+  
   useEffect(() => {
     if (navigation && Global) {
       Global.navigation = navigation;
@@ -42,15 +42,7 @@ const AuthLoadingScreen = ({
   );
 }
 
-export default connect(
-  ({ global }) => ({
-    token: global.token,
-    authState: global.authState,
-  }),
-  ({ global }) => ({
-    update: global.update,
-  })
-)(AuthLoadingScreen);
+export default AuthLoadingScreen
 
 const styles = StyleSheet.create({
   container: {
