@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {userLogin, userAuth} from '../services/users';
 import {useQuery, useMutation} from 'react-query';
 import Global from '../global';
-
+import conf from '../config';
 // 登录
 export const login = ({config = {}, update, formData, remember}) => {
   const mutation = useMutation({
