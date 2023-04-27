@@ -131,6 +131,55 @@ git commit -m "Keep calm and commit"
   └──@react-native-community/masked-view
 ```
 
+## 目录结构
+```
+├── Gemfile
+├── README.md
+├── __tests__
+│   └── App-test.js
+├── _bundle
+│   └── config
+├── _node-version
+├── android
+│   ├── app
+│   ├── build.gradle
+│   ├── gradle
+│   ├── gradle.properties
+│   ├── gradlew
+│   ├── gradlew.bat
+│   └── settings.gradle
+├── app.json
+├── babel.config.js
+├── index.js
+├── ios
+│   ├── HelloWorld
+│   ├── HelloWorld.xcodeproj
+│   ├── HelloWorld.xcworkspace
+│   ├── HelloWorldTests
+│   ├── Podfile
+│   ├── Podfile.lock
+│   ├── Pods
+│   ├── _xcode.env
+│   └── build
+├── jsconfig.json
+├── metro.config.js
+├── mocker
+│   ├── index.js
+│   └── user.mock.js
+├── package.json
+└── src
+    ├── App.js
+    ├── components
+    ├── config.js
+    ├── global.js
+    ├── hooks
+    ├── models
+    ├── pages
+    ├── routes
+    ├── services
+    └── utils
+```
+
 ## Links
 
 - [React Native upgrade helper](https://react-native-community.github.io/upgrade-helper/)

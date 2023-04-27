@@ -6,18 +6,22 @@ import Global from '../global';
 import conf from '../config';
 import { useSelector, useDispatch } from 'react-redux'
 // 登录
-export const login = ({ config = {}, update, remember }) => {
+export const login = ({ mutationKey }) => {
+  const dispatch = useDispatch()
   const mutation = useMutation({
+    mutationKey,
     mutationFn: userLogin,
     onSuccess: async data => {
       if (data?.token && data?.data) {
         await AsyncStorage.setItem('token', data.token);
-        if (remember) {
-          await AsyncStorage.setItem('cachLoginName', formData.loginName);
-          await AsyncStorage.setItem('cachPassword', formData.password);
-        }
         await AsyncStorage.setItem('userData', JSON.stringify(data.data));
-        update({ token: data.token, userData: data.data });
+        dispatch({
+          type: "global/update",
+          payload: {
+            token: data.token,
+            userData: JSON.stringify(data.data)
+          }
+        })
         if (Global.navigation) {
           Global.navigation.replace('Tab');
         }
@@ -25,7 +29,6 @@ export const login = ({ config = {}, update, remember }) => {
         Alert.alert(`Login failed - ${data.error}`, data.message);
       }
     },
-    ...config,
   });
   return mutation;
 };
@@ -65,7 +68,7 @@ export const useAuthToken = () => {
         dispatch({
           type: "global/update",
           payload: {
-            authState: true, 
+            authState: true,
             token: null
           }
         })

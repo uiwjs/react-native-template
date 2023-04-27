@@ -11,23 +11,17 @@ import { login } from '../../hooks/users'
 
 const SigninScreen = ({
   navigation,
-  update,
 }) => {
   const [store, setStore] = useState({
     hostType: '',
-    remember: false,
     formData: {
       username: 'admin',
       password: 'admin!',
     },
   })
-  const { hostType, remember, formData } = store
+  const { hostType, formData } = store
 
-  const { mutate, isLoading } = login({
-    update,
-    formData,
-    remember
-  })
+  const { mutate, isLoading } = login({ mutationKey: ['userLogin', formData] })
 
   useEffect(() => {
     if (navigation && Global) {
@@ -46,7 +40,7 @@ const SigninScreen = ({
     }
   };
 
-  const loginIn = () => mutate?.({ ...formData })
+  const loginIn = () => mutate?.(formData)
 
   return (
     <SafeAreaView style={styles.block}>
@@ -104,12 +98,7 @@ const SigninScreen = ({
   );
 }
 
-export default connect(
-  ({}) => ({}),
-  ({ global }) => ({
-    update: global.update
-  }),
-)(SigninScreen);
+export default SigninScreen
 
 const styles = StyleSheet.create({
   block: {
