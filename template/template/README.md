@@ -44,7 +44,7 @@ $ yarn start --reset-cache
     ├── README.md
     ├── package.json
     └── src
-        └── main.js
+        └── App.js
 ```
 
 ### `app/index.js`

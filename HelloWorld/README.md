@@ -20,7 +20,8 @@ $ arch -arm64 bundle exec pod install
 启动 React Native 服务
 
 ```bash
-$ yarn start --reset-cache
+$ yarn run api 
+$ yarn run ios 
 ```
 
 ## 目录说明
@@ -44,7 +45,7 @@ $ yarn start --reset-cache
     ├── README.md
     ├── package.json
     └── src
-        └── main.js
+        └── App.js
 ```
 
 ### `app/index.js`

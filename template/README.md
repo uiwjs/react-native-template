@@ -39,34 +39,27 @@ npm uninstall -g react-native-cli
 Further information can be found here: https://github.com/react-native-community/cli#about
 
 
-**🚧🚧 If you wish to not use `react-native@0.70.0` or higher**
-[help](https://github.com/facebook/react-native/issues/34608#)
-```
-Check whether your ruby version is higher than 2.7.5
-```
-
-```
-bundle install
-cd ios && bundle exec pod install
+### Macbook 安装
+```bash
+cd app/ios
+$ bundle install
+$ bundle exec pod install
 ```
 
-**🚧🚧 MacBook Pro with a M1 🚧🚧**
+Macbook **`M1`** 安装
 
 ```bash
-# Install ffi
-sudo arch -x86_64 gem install ffi
+cd app/ios
+$ arch -arm64 bundle install
+$ arch -arm64 bundle exec pod install
+```
 
-rm -rf Pods Podfile.lock
+启动 React Native **ios** 服务
 
-# Clear pods.
-pod deintegrate
-# pod rm Podfile.lock
-arch -x86_64 pod install
-# Re-install pods
-arch -x86_64 pod install --repo-update --verbose
-
-yarn run ios # Run instructions for iOS
-yarn run api
+```bash
+cd shared
+$ yarn run api 
+$ yarn run ios 
 ```
 
 **`react-native@0.61.0` or higher**
@@ -83,7 +76,7 @@ you can also install the new CLI globally (`npm i -g @react-native-community/cli
 ```bash
 npx react-native init MyApp --template @uiw/react-native-template
 
-cd MyApp/ios
+cd MyApp/app/ios
 # Installing CocoaPods dependencies
 pod install 
 ```
@@ -98,13 +91,15 @@ npx react-native@${VERSION} init ProjectName --template ${TEMPLATE_NAME}
 ```
 ## @uiw/react-native-uiw文档本地预览
 ```bash
-yarn run doc
+cd MyApp
+$ yarn run doc
 ```
 
 ## Use husky
 
 Edit package.json > prepare script and run it once:
 ```bash
+cd MyApp/shared
 npm pkg set scripts.prepare="husky install"
 npm run prepare
 ```
@@ -133,51 +128,23 @@ git commit -m "Keep calm and commit"
 
 ## 目录结构
 ```
-├── Gemfile
+.
+├── .gitignore
 ├── README.md
-├── __tests__
-│   └── App-test.js
-├── _bundle
-│   └── config
-├── _node-version
-├── android
-│   ├── app
-│   ├── build.gradle
-│   ├── gradle
-│   ├── gradle.properties
-│   ├── gradlew
-│   ├── gradlew.bat
-│   └── settings.gradle
-├── app.json
-├── babel.config.js
-├── index.js
-├── ios
-│   ├── HelloWorld
-│   ├── HelloWorld.xcodeproj
-│   ├── HelloWorld.xcworkspace
-│   ├── HelloWorldTests
-│   ├── Podfile
-│   ├── Podfile.lock
-│   ├── Pods
-│   ├── _xcode.env
-│   └── build
-├── jsconfig.json
-├── metro.config.js
-├── mocker
+├── app         # iOS/Android 原生应用
+│   ├── android
+│   ├── app.json
 │   ├── index.js
-│   └── user.mock.js
+│   ├── ios
+│   ├── metro.config.js
+│   ├── package.json
+│   └── tsconfig.json
 ├── package.json
-└── src
-    ├── App.js
-    ├── components
-    ├── config.js
-    ├── global.js
-    ├── hooks
-    ├── models
-    ├── pages
-    ├── routes
-    ├── services
-    └── utils
+└── shared    # React Native 业务逻辑
+    ├── README.md
+    ├── package.json
+    └── src
+        └── App.js
 ```
 
 ## Links
