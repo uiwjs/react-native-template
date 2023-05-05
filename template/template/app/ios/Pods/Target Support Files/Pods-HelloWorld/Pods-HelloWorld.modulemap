@@ -1,0 +1,6 @@
+module Pods_HelloWorld {
+  umbrella header "Pods-HelloWorld-umbrella.h"
+
+  export *
+  module * { export * }
+}

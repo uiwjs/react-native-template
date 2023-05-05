@@ -1,0 +1,26 @@
+{
+  "name": "@app/shared",
+  "version": "1.0.0",
+  "main": "./src/App.js",
+  "scripts": {
+    "api": "mocker ./mocker",
+    "api2": "NO_PROXY=true mocker ./mocker",
+    "lint": "eslint . --ext .js,.jsx",
+    "prettier": "prettier --write '**/*.{js,jsx,md,json}'",
+    "precommit": "npm run lint",
+    "lint-staged": "lint-staged"
+  },
+  "dependencies": {
+    "react-query": "~3.39.2",
+    "@rematch/core": "2.2.0",
+    "@rematch/loading": "2.1.2",
+    "react-redux": "8.0.5",
+    "redux": "4.1.2"
+  },
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "lint-staged": "~12.5.0",
+    "prettier": "^2.8.0",
+    "mocker-api": "~2.9.5"
+  }
+}
