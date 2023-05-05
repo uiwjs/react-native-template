@@ -15,5 +15,5 @@ export default {
   reducers: {
     update: (state, payload) => ({ ...state, ...payload }),
   },
-  effects: dispatch => ({}),
+  effects: (dispatch) => ({}),
 };

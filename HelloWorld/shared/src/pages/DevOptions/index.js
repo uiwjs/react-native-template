@@ -1,8 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { TextInput, SafeAreaView, View, Text, StatusBar, StyleSheet, ScrollView, Platform, KeyboardAvoidingView } from 'react-native';
-import { Button, WingBlank, Icon, Flex, Spacing, H4, List } from '@uiw/react-native';
+import {
+  TextInput,
+  SafeAreaView,
+  View,
+  Text,
+  StatusBar,
+  StyleSheet,
+  ScrollView,
+  Platform,
+  KeyboardAvoidingView,
+} from 'react-native';
+import {
+  Button,
+  WingBlank,
+  Icon,
+  Flex,
+  Spacing,
+  H4,
+  List,
+} from '@uiw/react-native';
 import conf from '../../config';
 
 class DevOptions extends React.Component {
@@ -26,7 +44,7 @@ class DevOptions extends React.Component {
     }
     if (apihost) {
       apihost = JSON.parse(apihost);
-      const selectUrl = state.dataList.find(item => item.url === apihost.url);
+      const selectUrl = state.dataList.find((item) => item.url === apihost.url);
       state.selectUrl = selectUrl || {};
     }
     // eslint-disable-next-line react/no-did-mount-set-state
@@ -40,7 +58,7 @@ class DevOptions extends React.Component {
   async handleEndEditing(e) {
     const { dataList } = this.state;
     const text = e.nativeEvent.text;
-    const isInclude = dataList.find(item => item.url === text);
+    const isInclude = dataList.find((item) => item.url === text);
     if (!isInclude && text) {
       const customUrl = { url: text, label: 'Custom URL', type: 'custom' };
       dataList.unshift(customUrl);
@@ -50,14 +68,14 @@ class DevOptions extends React.Component {
   }
   deleteCustomUrl = async () => {
     const { dataList, selectUrl } = this.state;
-    const data = dataList.filter(item => item.url !== selectUrl.url);
+    const data = dataList.filter((item) => item.url !== selectUrl.url);
     this.setState({ dataList: data, selectUrl: {} });
     await AsyncStorage.setItem('cacheURLData', JSON.stringify(data));
   };
-  handleCustomUrl = async customUrl => {
+  handleCustomUrl = async (customUrl) => {
     await this.setState({ customUrl });
   };
-  measureContainer = event => {
+  measureContainer = (event) => {
     const { height } = event.nativeEvent.layout;
     this.setState({ height });
   };
@@ -86,8 +104,16 @@ class DevOptions extends React.Component {
               extra={item.url || ' '}
               touchableStyle={{ backgroundColor: '#fff' }}
               style={{ backgroundColor: 'transparent' }}
-              onPress={this.handleSelect.bind(this, item)}>
-              {item.url === this.state.selectUrl.url && <Icon size={14} name="check" fill="#008EF0" style={styles.urlListIcon} />}
+              onPress={this.handleSelect.bind(this, item)}
+            >
+              {item.url === this.state.selectUrl.url && (
+                <Icon
+                  size={14}
+                  name="check"
+                  fill="#008EF0"
+                  style={styles.urlListIcon}
+                />
+              )}
               <Text>{item.label}</Text>
             </List.Item>
           ))}
@@ -99,7 +125,11 @@ class DevOptions extends React.Component {
         <StatusBar barStyle="light-content" />
         <View style={{ flex: 1 }}>
           <Flex justify="start" align="start">
-            <Button bordered={false} style={{ marginLeft: 15, marginBottom: 20 }} onPress={() => navigation.goBack()}>
+            <Button
+              bordered={false}
+              style={{ marginLeft: 15, marginBottom: 20 }}
+              onPress={() => navigation.goBack()}
+            >
               <Icon fill="#fff" size={23} name="arrow-left" />
             </Button>
           </Flex>
@@ -109,7 +139,11 @@ class DevOptions extends React.Component {
             </Flex>
             <Spacing />
             {Platform.OS === 'ios' ? (
-              <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }} keyboardVerticalOffset={120}>
+              <KeyboardAvoidingView
+                behavior="padding"
+                style={{ flex: 1 }}
+                keyboardVerticalOffset={120}
+              >
                 {DataSourceView}
               </KeyboardAvoidingView>
             ) : (
@@ -117,7 +151,12 @@ class DevOptions extends React.Component {
             )}
             {this.state.selectUrl.type === 'custom' && (
               <View>
-                <Button style={{ marginVertical: 10 }} bordered={false} type="danger" onPress={this.deleteCustomUrl}>
+                <Button
+                  style={{ marginVertical: 10 }}
+                  bordered={false}
+                  type="danger"
+                  onPress={this.deleteCustomUrl}
+                >
                   Delete Custom Host
                 </Button>
               </View>
@@ -130,7 +169,7 @@ class DevOptions extends React.Component {
 }
 
 export default connect(
-  ({  }) => ({}),
+  ({}) => ({}),
   ({ global }) => ({
     update: global.update,
   }),

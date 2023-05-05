@@ -1,7 +1,7 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
-import {useTheme, Text, Icon} from '@uiw/react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { StatusBar } from 'react-native';
+import { useTheme, Text, Icon } from '@uiw/react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MyHome from '../pages/MyHome';
 import OrderHome from '../pages/OrderHome';
 import Home from '../pages/Home';
@@ -27,7 +27,7 @@ const tabs = [
     icon: 'user',
   },
 ];
-const TabsScreen = props => {
+const TabsScreen = (props) => {
   const theme = useTheme();
   return (
     <React.Fragment>
@@ -36,7 +36,8 @@ const TabsScreen = props => {
         screenOptions={{
           tabBarActiveTintColor: '#035bb6',
           tabBarInactiveTintColor: 'gray',
-        }}>
+        }}
+      >
         {tabs.map((item, idx) => {
           return (
             <BottomTabs.Screen
@@ -45,20 +46,35 @@ const TabsScreen = props => {
               component={item.component}
               options={{
                 title: item.label,
-                headerStyle: {backgroundColor: theme.colors.primary_background},
+                headerStyle: {
+                  backgroundColor: theme.colors.primary_background,
+                },
                 headerTintColor: '#fff',
                 // eslint-disable-next-line react/no-unstable-nested-components
-                tabBarLabel: ({focused}) => (
+                tabBarLabel: ({ focused }) => (
                   <Text
                     style={{
-                      color: focused ? theme.colors.primary_background : theme.colors.gray300,
+                      color: focused
+                        ? theme.colors.primary_background
+                        : theme.colors.gray300,
                       fontSize: 12,
-                    }}>
+                    }}
+                  >
                     {item?.label}
                   </Text>
                 ),
                 // eslint-disable-next-line react/no-unstable-nested-components
-                tabBarIcon: ({focused}) => <Icon name={item.icon} size={20} color={focused ? theme.colors.primary_background : theme.colors.gray300} />,
+                tabBarIcon: ({ focused }) => (
+                  <Icon
+                    name={item.icon}
+                    size={20}
+                    color={
+                      focused
+                        ? theme.colors.primary_background
+                        : theme.colors.gray300
+                    }
+                  />
+                ),
               }}
             />
           );

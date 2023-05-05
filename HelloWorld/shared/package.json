@@ -8,7 +8,8 @@
     "lint": "eslint . --ext .js,.jsx",
     "prettier": "prettier --write '**/*.{js,jsx,md,json}'",
     "precommit": "npm run lint",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "start": "tsbb start src/*.js --use-babel --no-cjs"
   },
   "dependencies": {
     "react-query": "~3.39.2",
@@ -22,5 +23,14 @@
     "lint-staged": "~12.5.0",
     "prettier": "^2.8.0",
     "mocker-api": "~2.9.5"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{js,jsx,md,json}": [
+      "prettier --write"
+    ]
   }
 }

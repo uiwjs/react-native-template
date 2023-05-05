@@ -1,74 +1,110 @@
 import React, { Component, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { TextInput, SafeAreaView, StyleSheet, StatusBar, Text } from 'react-native';
-import { Button, H4, Flex, Spacing, P, Icon, CheckBox, Badge } from '@uiw/react-native';
+import {
+  TextInput,
+  SafeAreaView,
+  StyleSheet,
+  StatusBar,
+  Text,
+} from 'react-native';
+import {
+  Button,
+  H4,
+  Flex,
+  Spacing,
+  P,
+  Icon,
+  CheckBox,
+  Badge,
+} from '@uiw/react-native';
 import Global from '../../global';
 import Footer from '../../components/Footer';
 import { logoLight } from '../../components/icons/signin';
 import conf from '../../config';
-import { login } from '../../hooks/users'
+import { login } from '../../hooks/users';
 
-const SigninScreen = ({
-  navigation,
-}) => {
+const SigninScreen = ({ navigation }) => {
   const [store, setStore] = useState({
     hostType: '',
     formData: {
       username: 'admin',
       password: 'admin!',
     },
-  })
-  const { hostType, formData } = store
+  });
+  const { hostType, formData } = store;
 
-  const { mutate, isLoading } = login({ mutationKey: ['userLogin', formData] })
+  const { mutate, isLoading } = login({ mutationKey: ['userLogin', formData] });
 
   useEffect(() => {
     if (navigation && Global) {
       Global.navigation = navigation;
     }
     _getHostType();
-  }, [])
+  }, []);
 
   const _getHostType = async () => {
     if (conf.production) {
-      const productionOptions = conf.hosts.find(itm => itm.type === 'production');
+      const productionOptions = conf.hosts.find(
+        (itm) => itm.type === 'production',
+      );
       await AsyncStorage.setItem('apihost', JSON.stringify(productionOptions));
     } else {
       const host = await AsyncStorage.getItem('apihost');
-      setStore({ ...store, hostType: JSON.parse(host).type })
+      setStore({ ...store, hostType: JSON.parse(host).type });
     }
   };
 
-  const loginIn = () => mutate?.(formData)
+  const loginIn = () => mutate?.(formData);
 
   return (
     <SafeAreaView style={styles.block}>
       <StatusBar barStyle="light-content" />
       {!conf.production && (
         <Flex justify="end">
-          <Button bordered={false} style={styles.setting} onPress={() => navigation.navigate('DevOptions')}>
+          <Button
+            bordered={false}
+            style={styles.setting}
+            onPress={() => navigation.navigate('DevOptions')}
+          >
             <Icon bordered={false} name="setting" fill="#FFCB00" />
           </Button>
         </Flex>
       )}
 
       <Flex align="center" direction="column" style={{ flex: 1 }}>
-        <Flex justify="center" align="center" direction="column" style={styles.header}>
+        <Flex
+          justify="center"
+          align="center"
+          direction="column"
+          style={styles.header}
+        >
           <Icon xml={logoLight} size={75} />
           <H4 style={styles.titie}>Sign In</H4>
-          {!conf.production && <Text style={styles.hostNotice}>{hostType}</Text>}
+          {!conf.production && (
+            <Text style={styles.hostNotice}>{hostType}</Text>
+          )}
           <P style={styles.description}>Enter username and password.</P>
         </Flex>
         <Flex align="center" direction="column" style={{ flex: 1 }}>
-          <Flex style={styles.content} direction="column" justify="center" align="center">
+          <Flex
+            style={styles.content}
+            direction="column"
+            justify="center"
+            align="center"
+          >
             <TextInput
               value={formData.username}
               autoCorrect={false}
               placeholderTextColor="#fff"
               placeholder="请输入用户名"
               style={styles.input}
-              onChangeText={(text) => setStore({ ...store, formData: { ...formData, username: text } })}
+              onChangeText={(text) =>
+                setStore({
+                  ...store,
+                  formData: { ...formData, username: text },
+                })
+              }
             />
             <Spacing size={12} />
             <TextInput
@@ -77,7 +113,12 @@ const SigninScreen = ({
               autoCompleteType="password"
               secureTextEntry={true}
               style={styles.input}
-              onChangeText={(text) => setStore({ ...store, formData: { ...formData, password: text } })}
+              onChangeText={(text) =>
+                setStore({
+                  ...store,
+                  formData: { ...formData, password: text },
+                })
+              }
             />
             <Spacing size={23} />
             <Button
@@ -87,7 +128,8 @@ const SigninScreen = ({
               color="#BFBFBF"
               loading={isLoading}
               disabled={isLoading}
-              onPress={loginIn}>
+              onPress={loginIn}
+            >
               Sign In
             </Button>
           </Flex>
@@ -96,9 +138,9 @@ const SigninScreen = ({
       </Flex>
     </SafeAreaView>
   );
-}
+};
 
-export default SigninScreen
+export default SigninScreen;
 
 const styles = StyleSheet.create({
   block: {

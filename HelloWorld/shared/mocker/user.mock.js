@@ -1,6 +1,6 @@
 module.exports = {
   'POST /api/login': (req, res) => {
-    let {username, password} = req.body;
+    let { username, password } = req.body;
     if (username === 'admin' && password === 'admin!') {
       return res.status(201).json({
         message: 'Login successful!',

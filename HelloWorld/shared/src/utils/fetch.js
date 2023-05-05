@@ -1,9 +1,16 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Alert} from 'react-native';
+import { Alert } from 'react-native';
 import Global from '../global';
 
 export default async function request(url, options) {
-  let {method = 'POST', body = '', serverId = 'projectId', formdataBody, headers, ...params} = options || {};
+  let {
+    method = 'POST',
+    body = '',
+    serverId = 'projectId',
+    formdataBody,
+    headers,
+    ...params
+  } = options || {};
   if (typeof body !== 'string') {
     body = JSON.stringify(body);
   }
@@ -28,7 +35,7 @@ export default async function request(url, options) {
     params.processData = false;
     params.contentType = false;
     let formdata = new FormData();
-    Object.keys(formdataBody).forEach(keyName => {
+    Object.keys(formdataBody).forEach((keyName) => {
       formdata.append(keyName, String(formdataBody[keyName]));
     });
     body = formdata;
@@ -40,10 +47,10 @@ export default async function request(url, options) {
   return fetch(fetchURL, {
     method,
     body: body,
-    headers: {...header},
+    headers: { ...header },
     ...params,
   })
-    .then(async response => {
+    .then(async (response) => {
       const data = await response.json();
       if (/(200|201)/.test(response.status)) {
         return data;
@@ -52,9 +59,15 @@ export default async function request(url, options) {
         Global.navigation.navigate('SignIn');
         return;
       }
-      Alert.alert(`Request Error ${response.status}`, `E2111: ${data.message} - ${fetchURL} - ${JSON.stringify(data)}`);
+      Alert.alert(
+        `Request Error ${response.status}`,
+        `E2111: ${data.message} - ${fetchURL} - ${JSON.stringify(data)}`,
+      );
     })
-    .catch(error => {
-      Alert.alert('Service abnormal please check server', `E2112:${fetchURL} \n\n ${error.toString()} ${JSON.stringify(body)}`);
+    .catch((error) => {
+      Alert.alert(
+        'Service abnormal please check server',
+        `E2112:${fetchURL} \n\n ${error.toString()} ${JSON.stringify(body)}`,
+      );
     });
 }

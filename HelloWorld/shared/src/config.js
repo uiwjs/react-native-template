@@ -1,4 +1,4 @@
-import {getUniqueId, getVersion} from 'react-native-device-info';
+import { getUniqueId, getVersion } from 'react-native-device-info';
 
 export default {
   /**

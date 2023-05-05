@@ -22,5 +22,14 @@
     "lint-staged": "~12.5.0",
     "prettier": "^2.8.0",
     "mocker-api": "~2.9.5"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{js,jsx,md,json}": [
+      "prettier --write"
+    ]
   }
 }
