@@ -6,15 +6,13 @@ import Global from '../../global';
 import { logoLight } from '../../components/icons/signin';
 import Footer from '../../components/Footer';
 import { useAuthToken } from '../../hooks/users'
+import { useNavigation } from '@react-navigation/native';
 
 
-const AuthLoadingScreen = ({
-  navigation,
-  children
-}) => {
+const AuthLoadingScreen = ({ children }) => {
   const { token, authState } = useSelector(state=>state.global)
   const { mutate, isLoading } = useAuthToken()
-  
+  const navigation = useNavigation()
   useEffect(() => {
     if (navigation && Global) {
       Global.navigation = navigation;

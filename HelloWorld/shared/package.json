@@ -9,7 +9,7 @@
     "prettier": "prettier --write '**/*.{js,jsx,md,json}'",
     "precommit": "npm run lint",
     "lint-staged": "lint-staged",
-    "start": "tsbb start src/*.js --use-babel --no-cjs"
+    "doc": "kktd @uiw/react-native-doc/doc/build"
   },
   "dependencies": {
     "react-query": "~3.39.2",
@@ -22,7 +22,9 @@
     "husky": "^8.0.0",
     "lint-staged": "~12.5.0",
     "prettier": "^2.8.0",
-    "mocker-api": "~2.9.5"
+    "mocker-api": "~2.9.5",
+    "@kkt/doc": "^1.0.0",
+    "@uiw/react-native-doc": "^4.0.5"
   },
   "lint-staged": {
     "*.{js,jsx}": [

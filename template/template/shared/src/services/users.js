@@ -18,12 +18,3 @@ export async function userLogin(params) {
     body: params,
   });
 }
-
-/**
- * logout
- */
-export async function userLogout(params) {
-  return fetch('/api/logout', {
-    body: params,
-  });
-}
