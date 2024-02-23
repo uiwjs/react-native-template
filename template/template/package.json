@@ -52,7 +52,7 @@
     "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "~29.2.1",
     "babel-plugin-module-resolver": "^4.1.0",
-    "eslint": "~8.21.0",
+    "eslint": "~8.57.0",
     "eslint-plugin-prettier": "~4.2.1",
     "mocker-api": "~2.9.5",
     "prettier": "^2.8.0",
